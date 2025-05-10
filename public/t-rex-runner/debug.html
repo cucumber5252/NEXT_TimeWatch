@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>T-Rex Runner - Debug Mode</title>
+        <link rel="stylesheet" href="style.css" />
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f0f0f0;
+                padding: 20px;
+                text-align: center;
+            }
+
+            h1 {
+                color: #333;
+                margin-bottom: 20px;
+            }
+
+            .debug-info {
+                margin-top: 20px;
+                padding: 10px;
+                background: #fff;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                text-align: left;
+            }
+
+            .debug-info h3 {
+                margin-top: 0;
+            }
+
+            .debug-controls {
+                margin-top: 20px;
+            }
+
+            .debug-button {
+                padding: 8px 16px;
+                margin: 0 5px;
+                background: #4caf50;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+
+            .debug-button:hover {
+                background: #388e3c;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>T-Rex Runner - 디버그 모드</h1>
+
+        <div id="container">
+            <div id="offline-resources">
+                <div id="offline-resources-1x">
+                    <img id="offline-resources-1x-horizonal" src="./images/horizon.png" />
+                    <img id="offline-resources-1x-trex" src="./images/trex.png" />
+                    <img id="offline-resources-1x-obstacles" src="./images/obstacles.png" />
+                </div>
+                <div id="offline-resources-2x">
+                    <img id="offline-resources-2x-horizonal" src="./images/horizon_2x.png" />
+                    <img id="offline-resources-2x-trex" src="./images/trex_2x.png" />
+                    <img id="offline-resources-2x-obstacles" src="./images/obstacles_2x.png" />
+                </div>
+                <template id="audio-resources">
+                    <audio id="offline-sound-press" src="./sounds/button-press.mp3"></audio>
+                    <audio id="offline-sound-hit" src="./sounds/hit.mp3"></audio>
+                    <audio id="offline-sound-reached" src="./sounds/score-reached.mp3"></audio>
+                </template>
+            </div>
+            <div id="main-content">
+                <div class="runner-container">
+                    <canvas class="runner-canvas" width="600" height="150"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="debug-controls">
+            <button id="start-button" class="debug-button">게임 시작</button>
+            <button id="restart-button" class="debug-button">재시작</button>
+            <button id="pause-button" class="debug-button">일시정지</button>
+        </div>
+
+        <div class="debug-info">
+            <h3>디버그 정보</h3>
+            <div id="debug-output">게임이 로딩되었습니다. 시작 버튼을 눌러 테스트를 시작하세요.</div>
+        </div>
+
+        <script src="game.js"></script>
+        <script>
+            // 디버그 모드용 스크립트
+            document.getElementById('start-button').addEventListener('click', function () {
+                console.log('게임 시작');
+                document.getElementById('debug-output').textContent = '게임이 시작되었습니다.';
+            });
+
+            document.getElementById('restart-button').addEventListener('click', function () {
+                console.log('게임 재시작');
+                document.getElementById('debug-output').textContent = '게임이 재시작되었습니다.';
+            });
+
+            document.getElementById('pause-button').addEventListener('click', function () {
+                console.log('게임 일시정지');
+                document.getElementById('debug-output').textContent = '게임이 일시정지되었습니다.';
+            });
+        </script>
+    </body>
+</html>

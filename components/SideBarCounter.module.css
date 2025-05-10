@@ -1,0 +1,70 @@
+.counterContainer {
+    width: 100%;
+}
+
+.stat {
+    display: flex;
+    background-color: #0f0f0f;
+    height: 2rem; /* 2.5rem -> 2rem */
+    align-items: center;
+    border-radius: 3.2px; /* 4px -> 3.2px */
+    margin-bottom: 3.2px; /* 4px -> 3.2px */
+    padding-left: 12px;
+}
+
+.stat > .visitorImage {
+    /* margin-left: 4%; */
+    margin-right: 8px;
+    padding-bottom: 2px;
+    width: 14.4px; /* 18px -> 14.4px */
+    height: auto;
+}
+
+.stat > span {
+    font-size: 0.68rem; /* 0.85rem -> 0.68rem */
+    margin-right: 3.2%; /* 4% -> 3.2% */
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.searchContainer {
+    position: relative;
+    width: fit-content;
+    cursor: pointer;
+    text-decoration: none; /* 링크의 기본 밑줄 제거 */
+    color: inherit; /* 부모 요소의 색상 상속 */
+    margin-bottom: 3.2px;
+}
+
+.searchContainer > .searchImage {
+    width: 100%;
+    /* height: auto;
+    display: block; */
+    margin-bottom: 3.2px;
+}
+
+.textOverlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #0f0f0f;
+    font-size: 16px; /* 기존 24px */
+    font-weight: bold;
+    padding: 4px 8px; /* 5px 10px -> 4px 8px */
+    border-radius: 4px; /* 5px -> 4px */
+    white-space: nowrap; /* 텍스트가 줄바꿈되지 않도록 */
+}
+
+/* @media (max-width: 440px) {
+    .stat > span {
+        font-size: 0.75rem;
+    }
+
+    .stat > .visitorImage {
+        width: 16px;
+        height: auto;
+    }
+} */

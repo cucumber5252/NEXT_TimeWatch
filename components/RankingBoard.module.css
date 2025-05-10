@@ -1,0 +1,176 @@
+/* RankingBoard.module.css */
+.rankingBoard {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 16px;
+    color: white;
+    width: 100%;
+    margin-bottom: 16px;
+    backdrop-filter: blur(10px);
+}
+
+.title {
+    color: #01c915;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.currentScore {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    margin-bottom: 16px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.scoreValue {
+    font-weight: 700;
+    color: #01c915;
+    font-size: 18px;
+}
+
+.submitForm {
+    background-color: rgba(1, 201, 21, 0.1);
+    border: 1px solid rgba(1, 201, 21, 0.3);
+    border-radius: 4px;
+    padding: 12px;
+    margin-bottom: 16px;
+}
+
+.finalScoreText {
+    margin: 0 0 8px 0;
+    font-size: 14px;
+}
+
+.finalScore {
+    font-size: 18px;
+    font-weight: 700;
+    color: #01c915;
+}
+
+.rankNotice {
+    font-size: 14px;
+    color: #ffd700;
+    margin: 0 0 12px 0;
+    font-weight: 500;
+}
+
+.nicknameInput {
+    width: 100%;
+    padding: 8px 12px;
+    margin-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    color: white;
+    font-size: 14px;
+}
+
+.nicknameInput::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.submitButton {
+    width: 100%;
+    padding: 8px 12px;
+    background-color: #01c915;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.submitButton:hover {
+    background-color: #00a810;
+}
+
+.submitButton:disabled {
+    background-color: #666;
+    cursor: not-allowed;
+}
+
+.scoresList {
+    margin-top: 16px;
+}
+
+.scoresList h4 {
+    font-size: 16px;
+    margin: 0 0 8px 0;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.scoresList ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.scoreItem {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.scoreItem:last-child {
+    border-bottom: none;
+}
+
+.rank {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    margin-right: 10px;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.scoreItem:nth-child(1) .rank {
+    background-color: #ffd700;
+    color: #000;
+}
+
+.scoreItem:nth-child(2) .rank {
+    background-color: #c0c0c0;
+    color: #000;
+}
+
+.scoreItem:nth-child(3) .rank {
+    background-color: #cd7f32;
+    color: #000;
+}
+
+.playerName {
+    flex: 1;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.score {
+    font-weight: 700;
+    font-size: 15px;
+    color: #01c915;
+}
+
+.noScores {
+    text-align: center;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    padding: 20px 0;
+}

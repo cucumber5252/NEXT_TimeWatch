@@ -1,0 +1,42 @@
+.footer {
+    width: 1144px;
+    padding: 20px;
+    background-color: #000000;
+    text-align: center;
+    font-size: 10px;
+    color: hsl(0, 0%, 100%);
+}
+
+.firstRow,
+.secondRow,
+.thirdRow {
+    margin: 5px 0;
+}
+
+.firstRow a,
+.thirdRow a {
+    margin: 0 10px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.firstRow a:hover,
+.thirdRow a:hover {
+    text-decoration: underline;
+}
+
+.secondRow {
+    font-weight: thin;
+}
+
+@media (max-width: 440px) {
+    .footer {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .firstRow a,
+    .thirdRow a {
+        margin: 0 8px;
+    }
+}

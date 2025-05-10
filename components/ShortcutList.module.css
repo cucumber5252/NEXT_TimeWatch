@@ -1,0 +1,141 @@
+.shortcutListContainer {
+    display: flex;
+    align-items: center;
+    gap: 9.6px; /* 12px -> 9.6px */
+    width: 90%;
+    /* margin-bottom: 40px; */
+    flex-wrap: nowrap; /* 줄이 작아도 가로로 배치되도록 설정 */
+}
+
+.titleContainer {
+    display: flex;
+    align-items: center;
+    gap: 6.4px; /* 8px -> 6.4px */
+    flex-direction: row;
+    flex-shrink: 0;
+    max-width: 100%;
+}
+
+.titleImage {
+    height: 16px; /* 20px -> 16px */
+    width: auto;
+}
+
+.title {
+    font-size: 12.8px; /* 16px -> 12.8px */
+    font-weight: 700;
+    color: white;
+    white-space: nowrap; /* Prevents the text from wrapping */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.buttonContainer {
+    display: flex;
+    gap: 6.4px; /* 8px -> 6.4px */
+    overflow-x: auto;
+    white-space: nowrap;
+    flex-grow: 1; /* Ensures the button container takes remaining space */
+    justify-content: flex-start; /* Aligns items to the start */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    flex-shrink: 1;
+    min-width: 0;
+}
+
+.buttonContainer::-webkit-scrollbar {
+    display: none;
+}
+
+.websiteButton {
+    background-color: #2c2c2c;
+    color: white;
+    padding: 4.8px 9.6px; /* 6px 12px -> 4.8px 9.6px */
+    border: none;
+    border-radius: 6.4px; /* 8px -> 6.4px */
+    cursor: pointer;
+    font-size: 12.8px; /* 16px -> 12.8px */
+    transition: background-color 0.3s;
+    white-space: nowrap; /* 텍스트를 줄바꿈하지 않도록 설정 */
+    overflow: hidden; /* 넘치는 텍스트를 숨기기 */
+    flex-shrink: 0;
+}
+
+.websiteButton:hover {
+    background-color: #555;
+}
+
+.websiteButton[aria-selected='true'] {
+    background-color: #f0f0f0;
+    color: black;
+}
+
+@media (max-width: 440px) {
+    .shortcutListContainer {
+        display: flex;
+        align-items: center;
+        gap: 6.4px; /* 더 작은 간격 */
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .titleContainer {
+        gap: 4px; /* 더 작은 간격 */
+        flex-direction: row;
+        flex-shrink: 0;
+        max-width: 100%; /* 최대 너비 제한 */
+        justify-content: flex-start;
+    }
+
+    .titleImage {
+        height: 14px; /* 더 작은 높이 */
+    }
+
+    .title {
+        font-size: 11px; /* 더 작은 폰트 크기 */
+        color: white;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 80px; /* 최대 너비 제한 */
+    }
+
+    .buttonContainer {
+        gap: 4px; /* 더 작은 간격 */
+        overflow-x: auto;
+        white-space: nowrap;
+        flex-grow: 1;
+        justify-content: flex-start;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        flex-shrink: 1;
+        min-width: 0;
+    }
+
+    .buttonContainer::-webkit-scrollbar {
+        display: none;
+    }
+
+    .websiteButton {
+        background-color: #2c2c2c;
+        color: white;
+        padding: 3.2px 6.4px; /* 더 작은 패딩 */
+        border: none;
+        border-radius: 4px; /* 더 작은 둥근 모서리 */
+        cursor: pointer;
+        font-size: 11px; /* 더 작은 폰트 크기 */
+        transition: background-color 0.3s;
+        white-space: nowrap;
+        overflow: hidden;
+        flex-shrink: 0;
+    }
+
+    .websiteButton:hover {
+        background-color: #555;
+    }
+
+    .websiteButton[aria-selected='true'] {
+        background-color: #f0f0f0;
+        color: black;
+    }
+}

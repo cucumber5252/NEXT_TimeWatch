@@ -1,0 +1,104 @@
+/* components/ServerTimeInfo.module.css */
+
+.infoContainer {
+    width: 95%;
+}
+
+.websiteName {
+    font-size: 19.2px; /* 24px -> 19.2px */
+    color: white;
+    /* text-shadow: 0 0 1px white, 0 0 1.5px white, 0 0 2px white, 0 0 2.5px white, 0 0 3px white;*/
+    font-weight: bolder;
+    /* 빠른 디버깅을 위해 의도적으로 #01c915가 아닌 #01c916으로 설정 */
+    background: linear-gradient(to right, transparent 50%, #01c916);
+    background-size: 200%;
+    transition: 0.35s;
+    margin-bottom: 8px;
+}
+
+.websiteName:hover {
+    background-position: -100%, 0;
+}
+
+.noNeon {
+    text-shadow: none;
+    color: white; /* 네온 효과 없는 부분의 색상을 유지 */
+    margin-left: 9.6px; /* 12px -> 9.6px */
+}
+
+.info {
+    display: flex;
+    color: #b3b3b3;
+    font-size: 12.8px; /* 16px -> 12.8px */
+    opacity: 1;
+    text-align: center;
+}
+
+.info > .loadingMessage {
+    margin-top: auto;
+    margin-bottom: 28px;
+}
+
+.info > .infoMessage {
+    margin-top: auto;
+    margin-bottom: 28px;
+}
+
+.greenText {
+    color: #01c915;
+}
+
+.blink {
+    animation: blink-animation 4s linear infinite; /* 총 3초 주기의 애니메이션 */
+}
+
+@keyframes blink-animation {
+    0%,
+    60% {
+        opacity: 1; /* 2초 동안 진하게 유지 */
+    }
+    80% {
+        opacity: 0; /* 1초 동안 점차 연하게 변환 */
+    }
+    100% {
+        opacity: 1; /* 다시 밝아질 때 transition 적용 */
+    }
+}
+
+@media (max-width: 440px) {
+    .container {
+        text-align: center;
+        margin-bottom: 8px;
+    }
+
+    .websiteName {
+        font-size: 16px;
+        color: white;
+        /* text-shadow: 0 0 0.5px white, 0 0 0.7px white, 0 0 2px white, 0 0 1.2px white, 0 0 1.5px white; */
+        font-weight: bolder;
+        /* 빠른 디버깅을 위해 의도적으로 #01c915가 아닌 #01c916으로 설정 */
+        background: linear-gradient(to right, transparent 50%, #01c916);
+        background-size: 200%;
+        transition: 0.35s;
+        margin-bottom: 4px;
+    }
+    .websiteName:hover {
+        background-position: -100%, 0;
+    }
+
+    .noNeon {
+        text-shadow: none;
+        color: white;
+        margin-left: 6px;
+    }
+
+    .info {
+        color: #b3b3b3;
+        font-size: 12px;
+        opacity: 1;
+    }
+
+    .oneSecond {
+        color: #01c915;
+    }
+}

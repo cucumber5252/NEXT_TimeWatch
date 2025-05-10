@@ -1,0 +1,68 @@
+.heading {
+    font-size: 1.2em; /* 기본 폰트 크기 */
+    font-weight: 700;
+    margin-bottom: 32px;
+    text-align: center;
+    width: 100%;
+    margin-top: 64px;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 44.8px;
+    width: 80%;
+}
+
+.content {
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 19.2px;
+    line-height: 1.6;
+}
+
+.heading2 {
+    color: #ffffff;
+    font-size: 1em;
+    font-weight: 700;
+    margin-bottom: 9.6px;
+}
+
+.list {
+    list-style-type: none;
+}
+
+.listitem {
+    margin-bottom: 8px;
+}
+
+/* 440px 이하 화면용 미디어 쿼리 */
+@media (max-width: 440px) {
+    .heading {
+        font-size: 1em; /* 폰트 크기 줄임 */
+        margin-bottom: 24px; /* 여백 조정 */
+        margin-top: 48px; /* 상단 여백 조정 */
+    }
+
+    .section {
+        margin-bottom: 32px; /* 여백 줄임 */
+        width: 90%; /* 더 넓게 설정 */
+    }
+
+    .content {
+        font-size: 0.9em; /* 폰트 크기 줄임 */
+        margin-bottom: 16px; /* 여백 줄임 */
+        line-height: 1.4; /* 줄 간격 줄임 */
+    }
+
+    .heading2 {
+        font-size: 0.9em; /* 폰트 크기 줄임 */
+        margin-bottom: 8px; /* 여백 줄임 */
+    }
+
+    .listitem {
+        margin-bottom: 6px; /* 리스트 아이템 간격 줄임 */
+    }
+}

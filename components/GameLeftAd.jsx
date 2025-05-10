@@ -1,0 +1,48 @@
+'use client';
+
+import { useEffect, useCallback } from 'react';
+
+const GameLeftAd = () => {
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            try {
+                (window.adsbygoogle = window.adsbygoogle || []).push({});
+            } catch (e) {
+                console.error('AdSense error:', e);
+            }
+        }
+    }, []);
+
+    // 클릭 시 IP 수집 API 호출 함수
+    const handleClick = useCallback(async () => {
+        try {
+            await fetch('/api/track-click', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ adUnit: 'game_left_ad' }),
+            });
+        } catch (error) {
+            console.error('IP 수집 API 호출 오류:', error);
+        }
+    }, []);
+
+    return (
+        <>
+            <script
+                async
+                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4184585928401576"
+                crossOrigin="anonymous"
+            ></script>
+            <div onClick={handleClick}>
+                <ins
+                    className="adsbygoogle"
+                    style={{ display: 'inline-block', width: '160px', height: '600px' }}
+                    data-ad-client="ca-pub-4184585928401576"
+                    data-ad-slot="3620867579"
+                ></ins>
+            </div>
+        </>
+    );
+};
+
+export default GameLeftAd;

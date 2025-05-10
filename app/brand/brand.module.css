@@ -1,0 +1,176 @@
+.container {
+    width: 100%;
+}
+
+.headBanner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* 가로 너비 설정 */
+    margin-top: 80px;
+}
+
+.heading {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: 24px;
+    text-align: center;
+    width: 100%; /* 가로 너비 설정 */
+}
+
+.textLogo {
+    height: 40px;
+    width: 190px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.video {
+    height: 280px;
+    width: 280px;
+    margin-bottom: 30px;
+}
+
+.intro {
+    text-align: center;
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    width: 100%; /* 가로 너비 설정 */
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    width: 100%; /* 가로 너비 설정 */
+}
+
+.content {
+    text-align: center;
+    width: 100%; /* 가로 너비 설정 */
+    margin: 0 auto;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    font-size: 0.9em;
+}
+
+.button {
+    color: black;
+    background-color: #01c915;
+    border-radius: 16px;
+    padding: 12px;
+    transition: box-shadow 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800; /* Extra Bold */
+    font-style: italic;
+    letter-spacing: -0.05em; /* -5% letter spacing */
+}
+
+.button:hover {
+    box-shadow: 0 0 30px #01c915;
+}
+
+.toggleContainer {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 800px;
+}
+
+.toggleHeading {
+    margin-bottom: 20px 0;
+    font-size: 1.2em;
+}
+
+.toggleTitle {
+    padding: 10px;
+    cursor: pointer;
+    user-select: none;
+    border-bottom: 1px solid #ddd;
+}
+
+.toggleContent {
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 440px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    .headBanner {
+        margin-top: 40px;
+        padding: 0 1rem;
+    }
+
+    .heading {
+        font-size: 1.2em;
+        margin-bottom: 16px;
+        padding: 0 1rem;
+    }
+
+    .textLogo {
+        height: auto;
+        max-width: 100%;
+        margin-top: 5px;
+        margin-bottom: 20px;
+    }
+
+    .video {
+        height: auto;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .intro {
+        font-size: 1em;
+        margin-bottom: 20px;
+        line-height: 1.4;
+        padding: 0 1rem;
+    }
+
+    .section {
+        margin-bottom: 20px;
+        padding: 0 1rem;
+    }
+
+    .content {
+        font-size: 0.8em;
+        margin-bottom: 15px;
+        line-height: 1.4;
+        padding: 0 1rem;
+    }
+
+    .button {
+        padding: 10px;
+        font-size: 0.875em;
+        margin: 0 1rem;
+    }
+
+    .toggleContainer {
+        width: 100%;
+        padding: 0 1rem;
+    }
+
+    .toggleHeading {
+        font-size: 1em;
+        padding: 0 1rem;
+    }
+
+    .toggleTitle {
+        padding: 8px;
+        font-size: 0.875em;
+        padding: 0 1rem;
+    }
+
+    .toggleContent {
+        padding: 8px;
+        font-size: 0.875em;
+        padding: 0 1rem;
+    }
+}

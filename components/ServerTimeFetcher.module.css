@@ -1,0 +1,36 @@
+.button {
+    background-color: black;
+    color: white;
+    border: 1.2px solid white; /* 0.5px -> 0.4px */
+    padding: 6.4px 9.6px; /* 8px 12px -> 6.4px 9.6px */
+    cursor: pointer;
+    font-size: 12.8px; /* 16px -> 12.8px */
+    border-radius: 6.4px; /* 8px -> 6.4px */
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.button:hover {
+    background-color: #555;
+}
+
+.buttonContainer {
+    display: flex;
+}
+
+@media (max-width: 440px) {
+    .button {
+        background-color: black;
+        color: white;
+        border: 1.2px solid white;
+        padding: 4px 8px;
+        cursor: pointer;
+        font-size: 12px;
+        border-radius: 8px;
+        position: relative;
+    }
+
+    .button:hover {
+        background-color: #555;
+    }
+}
