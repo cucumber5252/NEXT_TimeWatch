@@ -54,7 +54,7 @@ const GameModal = ({ onClose }) => {
                     <div className={styles.rankingBox}>
                         <div className={styles.rankingRow}>
                             <span className={styles.rankingDot}>•</span>
-                            <span className={styles.rankingDesc}>럭타임 유저들의 최고 기록에 도전해보세요!</span>
+                            <span className={styles.rankingDesc}>타임워치 유저들의 최고 기록에 도전해보세요!</span>
                         </div>
                         <div className={styles.rankingPreviewText}>
                             <span className={styles.trophyEmoji}>🏆</span>

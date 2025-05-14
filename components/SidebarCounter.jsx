@@ -61,7 +61,7 @@ export default function UserCounter() {
                     width={424.48}
                     height={40}
                 />
-                {/* <div className={styles.textOverlay}>서버시간 럭타임 검색</div> */}
+                {/* <div className={styles.textOverlay}>서버시간 타임워치 검색</div> */}
             </a>
         </div>
     );

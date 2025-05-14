@@ -25,7 +25,7 @@ export async function POST(request) {
 
         // generateMetadata를 사용하여 metadata 생성
         const metadata = await generateMetadata({ params: { url } });
-        const pageName = metadata.title.replace(' 서버시간 - lucktime 럭타임', '');
+        const pageName = metadata.title.replace(' 서버시간 - timewatch 타임워치', '');
         const pageTitle = metadata.title;
         const pageDescription = metadata.description;
 

@@ -38,7 +38,7 @@ export default function BlogList() {
 
     return (
         <div className={styles.container}>
-            <h1 className={styles.title}>lucktime 블로그</h1>
+            <h1 className={styles.title}>timewatch 블로그</h1>
             {blogs.length === 0 ? (
                 <p>블로그 글 로딩 중...</p>
             ) : (

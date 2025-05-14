@@ -87,7 +87,7 @@ export default function ChatShutdown() {
                             <div className={styles.timestamp}>20:30</div>
                         </div>
                         <div className={`${styles.message} ${styles.myMessage}`}>
-                            럭타임을 사용해 주셔서 감사합니다!
+                            타임워치를 사용해 주셔서 감사합니다!
                         </div>
                     </div>
                 </div>

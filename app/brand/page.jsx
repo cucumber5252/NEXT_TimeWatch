@@ -44,7 +44,7 @@ const Brand = () => {
                         이제는 ‘선착순’이라는 단어가 일상 속 중요한 키워드가 되었습니다. <br />
                         여가, 소비, 교육 등 다양한 분야에서 우리는 목표를 달성하기 위해 정확한 타이밍을 필요로 합니다.{' '}
                         <br />
-                        <strong>lucktime</strong>은 이에 필요한 서버시간을 가장 정교하고 트렌디하게 제공합니다.
+                        <strong>timewatch</strong>은 이에 필요한 서버시간을 가장 정교하고 트렌디하게 제공합니다.
                     </p>
                     <p className={styles.content}>
                         단순한 서버시간 확인 사이트를 넘어,
@@ -52,7 +52,7 @@ const Brand = () => {
                         여러분이 필요한 일정들을 놓치지 않도록 도우며 일상 속에 작은 행운을 더하고자 합니다.
                     </p>
                     <p className={styles.content}>
-                        <strong>lucktime</strong>의 신뢰할 수 있는 시간과 일정으로, 오늘도 행운만 가득하세요!
+                        <strong>timewatch</strong>의 신뢰할 수 있는 시간과 일정으로, 오늘도 행운만 가득하세요!
                     </p>
                 </div>
                 <div className={styles.section}>
@@ -63,11 +63,11 @@ const Brand = () => {
                 <div className={styles.toggleContainer}>
                     <h3 className={styles.toggleHeading}>FAQ</h3>
                     <div className={styles.toggleTitle} onClick={() => handleToggle(0)}>
-                        Q. lucktime에서 제공하는 서버시간을 정말 믿을 수 있나요?
+                        Q. timewatch에서 제공하는 서버시간을 정말 믿을 수 있나요?
                     </div>
                     {toggleState[0] && (
                         <div className={styles.toggleContent}>
-                            A. lucktime만의 알고리즘으로 정교하게 추출 및 계산하여 믿을 수 있는 서버시간을 제공하고
+                            A. timewatch만의 알고리즘으로 정교하게 추출 및 계산하여 믿을 수 있는 서버시간을 제공하고
                             있습니다 :)
                         </div>
                     )}
@@ -76,8 +76,8 @@ const Brand = () => {
                     </div>
                     {toggleState[1] && (
                         <div className={styles.toggleContent}>
-                            A. lucktime만의 특별한 네잎 클로버와 시계 디자인의 결합으로, 여러분의 시간에 행운이 깃들기를
-                            바라는 마음을 담았어요. lucktime과 함께하는 순간마다 행운이 가득하길 바라요!
+                            A. timewatch만의 특별한 네잎 클로버와 시계 디자인의 결합으로, 여러분의 시간에 행운이
+                            깃들기를 바라는 마음을 담았어요. timewatch과 함께하는 순간마다 행운이 가득하길 바라요!
                         </div>
                     )}
                     <div className={styles.toggleTitle} onClick={() => handleToggle(2)}>

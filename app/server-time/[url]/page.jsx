@@ -252,10 +252,10 @@ function ServerTimePage() {
                 break;
             }
         }
-        const pageTitle = `${pageName} 서버시간 - lucktime 럭타임`;
+        const pageTitle = `${pageName} 서버시간 - timewatch 타임워치`;
         const pageDescription = `${pageName}${
             !pageName.includes(urlParam) ? `(${urlParam})` : ''
-        }의 정확한 서버시간을 lucktime 럭타임에서 확인하세요!`;
+        }의 정확한 서버시간을 timewatch 타임워치에서 확인하세요!`;
 
         try {
             await fetch('/api/server-time/save-or-update', {
