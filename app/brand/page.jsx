@@ -4,10 +4,11 @@ import React from 'react';
 import styles from './brand.module.css';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import ReactDOM from 'react-dom';
 import Image from 'next/image';
 
 const Brand = () => {
+    const router = useRouter();
+
     const handleButtonClick = () => {
         router.push('/');
     };
@@ -26,14 +27,9 @@ const Brand = () => {
         <div className="container">
             <div className="separatePage">
                 <div className={styles.headBanner}>
-                    <h1 className={styles.heading}>
-                        [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] 에 행운을
-                        가져다주는 서버시간
-                    </h1>
+                    <h1 className={styles.heading}>지금 시간 보게?</h1>
                     <Image src="/logo.svg" className={styles.textLogo} alt="Text Logo" width={245.7} height={50} />
-                    <video muted autoPlay loop className={styles.video}>
-                        <source src="/logoshine.mp4" type="video/mp4" alt="Clover Logo" />
-                    </video>
+                    <Image src="/mascot.svg" className={styles.imageLogo} alt="Image Logo" width={245.7} height={50} />
                 </div>
                 <div className={styles.section}>
                     <p className={styles.intro}>
@@ -52,12 +48,12 @@ const Brand = () => {
                         여러분이 필요한 일정들을 놓치지 않도록 도우며 일상 속에 작은 행운을 더하고자 합니다.
                     </p>
                     <p className={styles.content}>
-                        <strong>timewatch</strong>의 신뢰할 수 있는 시간과 일정으로, 오늘도 행운만 가득하세요!
+                        <strong>timewatch</strong>의 신뢰할 수 있는 시간과 일정으로, 오늘도 웃음만 가득하세요!
                     </p>
                 </div>
                 <div className={styles.section}>
                     <div className={styles.button} style={{ cursor: 'pointer' }} onClick={handleButtonClick}>
-                        wish you luck!
+                        watch time now!
                     </div>
                 </div>
                 <div className={styles.toggleContainer}>
@@ -76,8 +72,8 @@ const Brand = () => {
                     </div>
                     {toggleState[1] && (
                         <div className={styles.toggleContent}>
-                            A. timewatch만의 특별한 네잎 클로버와 시계 디자인의 결합으로, 여러분의 시간에 행운이
-                            깃들기를 바라는 마음을 담았어요. timewatch과 함께하는 순간마다 행운이 가득하길 바라요!
+                            A. 시계의 시침과 분침을 눈 모양으로 형상화해서, 항상 정확한 시간을 지켜보며 웃음만
+                            가득하기를 바라는 마음을 담았습니다 :)
                         </div>
                     )}
                     <div className={styles.toggleTitle} onClick={() => handleToggle(2)}>

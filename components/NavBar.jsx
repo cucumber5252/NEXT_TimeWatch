@@ -5,7 +5,6 @@ import SigninButton from './SigninButton';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import TRexGame from './TRexGame';
 
 const NavBar = () => {
     const { data: session, status } = useSession();
@@ -56,13 +55,6 @@ const NavBar = () => {
                 <div className={styles.date}>
                     오늘은 {getCurrentDate()} {getCurrentDay()}!
                 </div>
-                {/* <>
-                    {session?.user?.role == 'admin' && ( */}
-                <button className={styles.adventureButton} onClick={handleGameClick}>
-                    <span>럭끼의 모험</span>
-                </button>
-                {/* )}
-                </> */}
             </div>
             <div className={styles.right}>
                 {isLoggedIn && (

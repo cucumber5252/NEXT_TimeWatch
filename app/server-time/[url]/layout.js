@@ -1,5 +1,4 @@
 import './globals.css';
-import HotjarTracker from '../../../components/HotJarTracker'; // Adjust the path as needed
 import mappings from '../../../lib/mappings';
 
 // 도메인을 표준화하는 함수
@@ -42,7 +41,7 @@ export async function generateMetadata({ params }) {
             title: pageTitle,
             description: pageDescription,
             url: `https://time-watch-tau.vercel.app/server-time/${url}`,
-            siteName: '행운의 서버시간 timewatch 타임워치',
+            siteName: '지금 시간 보게? timewatch 타임워치',
             images: [
                 {
                     url: 'https://time-watch-tau.vercel.app/og_image.jpg',
@@ -63,10 +62,5 @@ export async function generateMetadata({ params }) {
 }
 
 export default function ServerTimeLayout({ children }) {
-    return (
-        <>
-            <HotjarTracker /> {/* Include HotjarTracker here */}
-            {children}
-        </>
-    );
+    return <>{children}</>;
 }

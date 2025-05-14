@@ -3,33 +3,31 @@ import { Analytics } from '@vercel/analytics/react';
 import { Providers } from './providers.jsx';
 import ClientLayout from './ClientLayout.jsx';
 import { GoogleTagManager } from '@next/third-parties/google';
-import HotjarTracker from '../components/HotJarTracker.jsx'; // Import HotjarTracker component
-
 export const metadata = {
-    title: '행운의 서버시간 timewatch 타임워치',
+    title: '지금 시간 보게? timewatch 타임워치',
     description:
         '가장 정교한 밀리초 서버시간. 티켓팅 인터파크 예스24 멜론티켓 티켓링크 쿠팡플레이, 수강신청, 구글폼, 음악방송 사전녹화 선착순 신청 전용시계',
     icons: {
         icon: '/favicon_48.svg',
     },
     openGraph: {
-        title: '행운의 서버시간 timewatch 타임워치',
+        title: '지금 시간 보게? timewatch 타임워치',
         description: '믿을 수 있는 가장 트렌디한 서버시간',
         url: 'https://time-watch-tau.vercel.app/',
-        siteName: '행운의 서버시간 timewatch 타임워치',
+        siteName: '지금 시간 보게? timewatch 타임워치',
         images: [
             {
                 url: 'https://time-watch-tau.vercel.app/og_image.jpg',
                 width: 800,
                 height: 600,
-                alt: '행운의 서버시간 timewatch 타임워치',
+                alt: '지금 시간 보게? timewatch 타임워치',
             },
         ],
         type: 'website',
     },
     twitter: {
         card: 'summary_large_image',
-        title: '행운의 서버시간 timewatch 타임워치',
+        title: '지금 시간 보게? timewatch 타임워치',
         description: '믿을 수 있는 가장 트렌디한 서버시간',
         images: ['https://time-watch-tau.vercel.app/og_image.jpg'],
     },
@@ -39,7 +37,7 @@ export default function RootLayout({ children }) {
     return (
         <html lang="ko">
             <head>
-                <GoogleTagManager gtmId="GTM-NG49ZT4P" />
+                {/* <GoogleTagManager gtmId="GTM-NG49ZT4P" /> */}
                 <link rel="icon" href="/favicon.ico" />
 
                 {/* 애플 메타태그 추가 */}
@@ -79,18 +77,17 @@ export default function RootLayout({ children }) {
                 ></script> */}
             </head>
             <body>
-                <noscript>
+                {/* <noscript>
                     <iframe
                         src="https://www.googletagmanager.com/ns.html?id=GTM-NG49ZT4P"
                         height="0"
                         width="0"
                         style={{ display: 'none', visibility: 'hidden' }}
                     ></iframe>
-                </noscript>
+                </noscript> */}
                 <Providers>
                     <ClientLayout>{children}</ClientLayout>
                 </Providers>
-                <HotjarTracker />
                 <Analytics />
             </body>
         </html>

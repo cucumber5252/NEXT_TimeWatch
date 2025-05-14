@@ -10,7 +10,7 @@
     color: white;
     /* text-shadow: 0 0 0.8px white, 0 0 1.3px white, 0 0 1.8px white, 0 0 2.3px white, 0 0 2.8px white; */
     font-weight: bolder;
-    /* 빠른 디버깅을 위해 의도적으로 #01c915가 아닌 #01c916으로 설정 */
+    /* 빠른 디버깅을 위해 의도적으로 #0077FF가 아닌 #01c916으로 설정 */
     background: linear-gradient(to right, transparent 50%, #01c916);
     background-size: 200%;
     transition: 0.35s;
@@ -22,7 +22,7 @@
 }
 
 .nameHighlight {
-    /* 빠른 디버깅을 위해 의도적으로 #01c915가 아닌 #01c916으로 설정 */
+    /* 빠른 디버깅을 위해 의도적으로 #0077FF가 아닌 #01c916으로 설정 */
     background: linear-gradient(to right, transparent 50%, #01c916);
     background-size: 200%;
     transition: 0.35s;
@@ -45,7 +45,7 @@
 }
 
 .oneSecond {
-    color: #01c915;
+    color: #0077ff;
 }
 
 .blink {
@@ -76,7 +76,7 @@
         color: white;
         /* text-shadow: 0 0 0.5px white, 0 0 0.7px white, 0 0 2px white, 0 0 1.2px white, 0 0 1.5px white; */
         font-weight: bolder;
-        /* 빠른 디버깅을 위해 의도적으로 #01c915가 아닌 #01c916으로 설정 */
+        /* 빠른 디버깅을 위해 의도적으로 #0077FF가 아닌 #01c916으로 설정 */
         background: linear-gradient(to right, transparent 50%, #01c916);
         background-size: 200%;
         transition: 0.35s;
@@ -99,6 +99,6 @@
     }
 
     .oneSecond {
-        color: #01c915;
+        color: #0077ff;
     }
 }

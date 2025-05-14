@@ -25,19 +25,8 @@ import SidebarCounter from '../components/SidebarCounter';
 import events from '../lib/events';
 import Top10Websites from '../components/Top10Websites';
 import ChatHome from '../components/ChatHome';
-import ChatShutdown from '../components/ChatShutdown';
-import MobileAd from '../components/MobileAd';
-import SidebarAd from '../components/SidebarAd';
-import MainAd from '../components/MainAd';
-import SimpleAd from '../components/SimpleAd';
 import BroadcastList from '../components/BroadcastList';
 import SchoolDropdown from '../components/SchoolDropdown';
-import CoupangNotice from '../components/CoupangNotice';
-import CoupangMainAd from '../components/CoupangMainAd';
-import CoupangSimpleAd from '../components/CoupangSimpleAd';
-import CoupangSidebarAd from '../components/CoupangSidebarAd';
-import CoupangMobileAd from '../components/CoupangMobileAd';
-import GameModal from '../components/GameModal';
 
 function HomePageContent() {
     const [serverTime, setServerTime] = useState(null);
@@ -59,7 +48,6 @@ function HomePageContent() {
     const [isMobile, setIsMobile] = useState(false);
     const [isLoading, setIsLoading] = useState(true); // 로딩 상태 관리
     const [isFetching, setIsFetching] = useState(false);
-    const [showGameModal, setShowGameModal] = useState(false);
     // const [isBlocked, setIsBlocked] = useState(false);
 
     // 최초 로딩 시 한 번만 서버 시간을 가져오는 useEffect 추가
@@ -241,22 +229,6 @@ function HomePageContent() {
     // 컴포넌트 렌더링 조건 (isSimple && !isMobile)
     const shouldUseSimple = isSimple && !isMobile;
 
-    useEffect(() => {
-        // 로컬 스토리지에서 모달 표시 여부 확인
-        const hideUntil = localStorage.getItem('gameModalHideUntil');
-        if (hideUntil) {
-            const hideUntilDate = new Date(hideUntil);
-            if (hideUntilDate > new Date()) {
-                return;
-            }
-        }
-        setShowGameModal(true);
-    }, []);
-
-    const handleCloseModal = () => {
-        setShowGameModal(false);
-    };
-
     return (
         <div className={containerClass}>
             <div className={mainContainerClass}>
@@ -275,9 +247,7 @@ function HomePageContent() {
                             className="adsense-container"
                             style={{ width: '100%', minHeight: '90px', marginTop: '28.75px', marginBottom: '28px' }}
                         >
-                            {/* {!isBlocked && <SimpleAd />} */}
-                            <SimpleAd />
-                            {/* <CoupangSimpleAd /> */}
+                            {/* <SimpleAd /> */}
                         </div>
 
                         <div className="simpleWebsiteContainer">
@@ -357,9 +327,7 @@ function HomePageContent() {
                 {isMobile && (
                     <>
                         <div className="adsense-container" style={{ width: '100%' }}>
-                            {/* {!isBlocked && <MobileAd />} */}
-                            <MobileAd />
-                            {/* <CoupangMobileAd /> */}
+                            {/* <MobileAd /> */}
                         </div>
                     </>
                 )}
@@ -374,9 +342,7 @@ function HomePageContent() {
                 )}
                 {!isMobile && (
                     <div className="adsense-container" style={{ width: '100%', marginBottom: '8px' }}>
-                        {/* {!isBlocked && <MainAd />} */}
-                        <MainAd />
-                        {/* <CoupangMainAd /> */}
+                        {/* <MainAd /> */}
                     </div>
                 )}
                 <EventNav eventnavpict="/eventnavpict.svg" />
@@ -414,9 +380,7 @@ function HomePageContent() {
                     <SchoolDropdown />
                     <ChatHome />
                     <div className="adsense-container" style={{ width: '100%' }}>
-                        {/* {!isBlocked && <SidebarAd />} */}
-                        <SidebarAd />
-                        {/* <CoupangSidebarAd /> */}
+                        {/* <SidebarAd /> */}
                     </div>
                     <BroadcastList />
                     <Top10Websites />
@@ -431,7 +395,6 @@ function HomePageContent() {
                     {/* <CoupangNotice /> */}
                 </div>
             )}
-            {showGameModal && <GameModal onClose={handleCloseModal} />}
         </div>
     );
 }

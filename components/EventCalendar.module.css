@@ -67,7 +67,7 @@
 .day:hover,
 .selectedDay {
     background-color: rgba(0, 128, 0, 0.1);
-    border: 1.2px solid #01c915;
+    border: 1.2px solid #0077ff;
     border-radius: 50%;
 }
 
@@ -87,7 +87,7 @@
 .eventDot {
     width: 3.2px;
     height: 3.2px;
-    background-color: #01c915;
+    background-color: #0077ff;
     border-radius: 50%;
     position: absolute;
     bottom: 4px;

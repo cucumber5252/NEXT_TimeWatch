@@ -11,7 +11,7 @@ const EventList = ({ events, onSelect, onAddToCalendar, selectedCategories = ['�
     const { data: session } = useSession();
     const [favorites, setFavorites] = useState({});
     const [favoriteEvents, setFavoriteEvents] = useState([]);
-    const [clovers, setClovers] = useState([]);
+    const [mascots, setMascots] = useState([]);
     const [isLeft, setIsLeft] = useState(true); // 클로버 위치를 교대로 설정
     const router = useRouter(); // useRouter 훅 초기화
 
@@ -209,17 +209,17 @@ const EventList = ({ events, onSelect, onAddToCalendar, selectedCategories = ['�
             const leftPosition = isLeft ? '30%' : '70%'; // 번갈아가며 왼쪽과 오른쪽 위치 설정
             const randomBottomPosition = Math.floor(Math.random() * 60) + 20 + 'px'; // 랜덤 높이 (20px ~ 80px)
 
-            const newClover = {
+            const newMascot = {
                 id: uuidv4(),
                 left: leftPosition,
                 bottom: randomBottomPosition,
             };
 
-            setClovers((prevClovers) => [...prevClovers, newClover]);
+            setMascots((prevMascots) => [...prevMascots, newMascot]);
             setIsLeft((prev) => !prev); // 위치를 반전시킴
 
             setTimeout(() => {
-                setClovers((prevClovers) => prevClovers.filter((clover) => clover.id !== newClover.id));
+                setMascots((prevMascots) => prevMascots.filter((mascot) => mascot.id !== newMascot.id));
             }, 3000); // 3초 후 클로버 제거
         }, 4000); // 4초 간격으로 클로버 추가
 
@@ -298,14 +298,14 @@ const EventList = ({ events, onSelect, onAddToCalendar, selectedCategories = ['�
                             <span>
                                 아직 즐겨찾기한 이벤트가 없어요.
                                 <br />
-                                관심 있는 이벤트를 즐겨찾기해 보세요 🍀✨
+                                관심 있는 이벤트를 즐겨찾기해 보세요 ✨
                             </span>
                         ) : (
                             <p className={styles.noFavoriteText}>
                                 <span>
                                     이 기능은 로그인 후에 이용할 수 있어요.
                                     <br />
-                                    관심 있는 이벤트를 즐겨찾기하고 편하게 모아 보세요 🍀✨
+                                    관심 있는 이벤트를 즐겨찾기하고 편하게 모아 보세요 ✨
                                     <br />
                                     <br />
                                 </span>
@@ -317,18 +317,17 @@ const EventList = ({ events, onSelect, onAddToCalendar, selectedCategories = ['�
                     ) : (
                         <div>
                             <span>이벤트가 없는 날이에요 :)</span>
-                            {/* 마스코트와 클로버 */}
-                            <div className={styles.mascotContainer}>
-                                <img src="/mascot_whole.svg" alt="Mascot" className={styles.mascotImage} />
-                                {clovers.map((clover) => (
+                            <div className={styles.logoContainer}>
+                                <img src="/logo.svg" alt="Logo" className={styles.logoImage} />
+                                {mascots.map((mascot) => (
                                     <img
-                                        key={clover.id}
-                                        src="/clover_singlecolor.svg"
-                                        alt="Clover"
-                                        className={styles.cloverImage}
+                                        key={mascot.id}
+                                        src="/mascot.svg"
+                                        alt="Mascot"
+                                        className={styles.mascotImage}
                                         style={{
-                                            left: clover.left,
-                                            bottom: clover.bottom,
+                                            left: mascot.left,
+                                            bottom: mascot.bottom,
                                         }}
                                     />
                                 ))}

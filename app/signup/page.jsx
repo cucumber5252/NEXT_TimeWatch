@@ -138,7 +138,7 @@ const Signup = () => {
                         <span
                             onClick={() => setIsModalOpen(true)}
                             className={styles.underline}
-                            style={{ color: '#01c915', cursor: 'pointer' }}
+                            style={{ color: '#0077FF', cursor: 'pointer' }}
                         >
                             <br />
                             이용약관 및 개인정보처리방침 보기

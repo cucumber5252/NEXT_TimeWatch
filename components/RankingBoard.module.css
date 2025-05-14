@@ -11,7 +11,7 @@
 }
 
 .title {
-    color: #01c915;
+    color: #0077ff;
     font-size: 18px;
     font-weight: 600;
     margin-top: 0;
@@ -33,7 +33,7 @@
 
 .scoreValue {
     font-weight: 700;
-    color: #01c915;
+    color: #0077ff;
     font-size: 18px;
 }
 
@@ -53,7 +53,7 @@
 .finalScore {
     font-size: 18px;
     font-weight: 700;
-    color: #01c915;
+    color: #0077ff;
 }
 
 .rankNotice {
@@ -81,7 +81,7 @@
 .submitButton {
     width: 100%;
     padding: 8px 12px;
-    background-color: #01c915;
+    background-color: #0077ff;
     border: none;
     border-radius: 4px;
     color: white;
@@ -165,7 +165,7 @@
 .score {
     font-weight: 700;
     font-size: 15px;
-    color: #01c915;
+    color: #0077ff;
 }
 
 .noScores {

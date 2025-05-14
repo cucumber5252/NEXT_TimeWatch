@@ -114,13 +114,7 @@ const ShortcutList = ({ onSelect }) => {
     return (
         <div className={styles.shortcutListContainer}>
             <div className={styles.titleContainer}>
-                <Image
-                    src="/fire_boots.svg"
-                    alt="Title Image"
-                    className={styles.titleImage}
-                    width={17.39}
-                    height={20}
-                />
+                <Image src="/sun.svg" alt="Title Image" className={styles.titleImage} width={17.39} height={20} />
                 <h2 className={styles.title}>오늘의 이벤트</h2>
             </div>
             <div

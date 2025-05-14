@@ -104,7 +104,7 @@
 
 .myMessage {
     align-self: flex-end;
-    background-color: #00ba13;
+    background-color: #0077ff;
     border-radius: 0.4rem 0.4rem 0rem 0.4rem;
     max-width: 80%; /* 긴 메세지 보내도 삭제버튼 가려짐 방지 */
 }
@@ -248,7 +248,7 @@
 }
 
 .filterButton.active {
-    color: #01c915;
+    color: #0077ff;
     border-color: #fff;
     font-weight: 700;
 }

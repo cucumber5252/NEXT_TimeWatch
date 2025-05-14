@@ -19,23 +19,13 @@ import ShortcutList from '../../../components/ShortcutList';
 import SidebarCounter from '../../../components/SidebarCounter';
 import Top10Websites from '../../../components/Top10Websites';
 import ChatUrl from '../../../components/ChatUrl';
-import ChatShutdown from '../../../components/ChatShutdown';
 import EventNav from '../../../components/EventNav';
 import EventList from '../../../components/EventList';
 import EventCalendar from '../../../components/EventCalendar';
 import dayjs from 'dayjs';
 import events from '../../../lib/events';
 import mappings from '../../../lib/mappings';
-import MobileAd from '../../../components/MobileAd';
-import SidebarAd from '../../../components/SidebarAd';
-import MainAd from '../../../components/MainAd';
-import CoupangNotice from '../../../components/CoupangNotice';
-import CoupangMainAd from '../../../components/CoupangMainAd';
-import CoupangSimpleAd from '../../../components/CoupangSimpleAd';
-import CoupangSidebarAd from '../../../components/CoupangSidebarAd';
-import CoupangMobileAd from '../../../components/CoupangMobileAd';
 import BroadcastList from '../../../components/BroadcastList';
-import SimpleAd from '../../../components/SimpleAd';
 import SchoolDropdown from '../../../components/SchoolDropdown';
 
 function ServerTimePage() {
@@ -333,9 +323,7 @@ function ServerTimePage() {
                             className="adsense-container"
                             style={{ width: '100%', minHeight: '90px', marginTop: '28.75px', marginBottom: '28px' }}
                         >
-                            {/* {!isBlocked && <SimpleAd />} */}
-                            <SimpleAd />
-                            {/* <CoupangSimpleAd /> */}
+                            {/* <SimpleAd /> */}
                         </div>
                         <div className="simpleWebsiteContainer">
                             <SimpleWebsiteName website={url} />
@@ -413,9 +401,7 @@ function ServerTimePage() {
                 {isMobile && (
                     <>
                         <div className="adsense-container" style={{ width: '100%' }}>
-                            {/* {!isBlocked && <MobileAd />} */}
-                            <MobileAd />
-                            {/* <CoupangMobileAd /> */}
+                            {/* <MobileAd /> */}
                         </div>
                     </>
                 )}
@@ -428,9 +414,7 @@ function ServerTimePage() {
                 )}
                 {!isMobile && (
                     <div className="adsense-container" style={{ width: '100%', marginBottom: '8px' }}>
-                        {/* {!isBlocked && <MainAd />} */}
-                        <MainAd />
-                        {/* <CoupangMainAd /> */}
+                        {/* <MainAd /> */}
                     </div>
                 )}
                 {/* <ChatUrl url={url} /> */}
@@ -465,9 +449,7 @@ function ServerTimePage() {
                     <SchoolDropdown />
                     <ChatUrl url={url} />
                     <div className="adsense-container" style={{ width: '100%' }}>
-                        {/* {!isBlocked && <SidebarAd />} */}
-                        <SidebarAd />
-                        {/* <CoupangSidebarAd /> */}
+                        {/* <SidebarAd /> */}
                     </div>
                     <BroadcastList />
                     <Top10Websites />

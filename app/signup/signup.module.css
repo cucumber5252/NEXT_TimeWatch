@@ -52,7 +52,7 @@
     height: 3.5rem; /* 56px equivalent */
     font-size: 1rem;
     color: #ffffff;
-    background-color: #01c915;
+    background-color: #0077ff;
     border: none;
     border-radius: 0.5rem; /* 8px equivalent */
     cursor: pointer;
@@ -110,7 +110,7 @@
     max-width: 500px;
     overflow-y: auto; /* 내용이 길어질 경우 스크롤 추가 */
     max-height: 80vh; /* 화면 높이의 80%를 넘지 않도록 설정 */
-    border: 2px solid #01c915; /* Border 색상 추가 */
+    border: 2px solid #0077ff; /* Border 색상 추가 */
 }
 
 /* 스크롤바 스타일 */
@@ -123,7 +123,7 @@
 }
 
 .modal::-webkit-scrollbar-thumb {
-    background-color: #01c915;
+    background-color: #0077ff;
     border-radius: 20px;
     border: 3px solid transparent;
     background-clip: content-box;
@@ -196,7 +196,7 @@
         padding: 1rem;
         max-height: 80vh; 
         border-radius: 1rem; 
-        border: 2px solid #01c915;
+        border: 2px solid #0077FF;
     }
 
     .modal h1 {
@@ -226,7 +226,7 @@
     }
 
     .modal::-webkit-scrollbar-thumb {
-        background-color: #01c915;
+        background-color: #0077FF;
         border-radius: 20px;
         border: 3px solid transparent;
         background-clip: content-box;

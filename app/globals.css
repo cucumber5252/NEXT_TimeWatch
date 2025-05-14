@@ -125,7 +125,7 @@ body {
 }
 
 .event-nav button.selected {
-    background-color: #01c915;
+    background-color: #0077ff;
 }
 
 .event-post {
@@ -188,7 +188,7 @@ body {
 }
 
 .server-time-status.simple {
-    background-color: #01c915;
+    background-color: #0077ff;
 }
 
 @media (max-width: 1144px) {

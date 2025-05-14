@@ -48,21 +48,6 @@ export default function UserCounter() {
                 <span>어제 접속한 사람들</span>
                 <span className={styles.bold}>{yesterdayVisits} 명</span>
             </div>
-            <a
-                href="https://search.naver.com/search.naver?ssc=tab.nx.all&where=nexearch&query=%EC%84%9C%EB%B2%84%EC%8B%9C%EA%B0%84+%EB%9F%AD%ED%83%80%EC%9E%84&sm=tab_org&qvt=0"
-                className={styles.searchContainer}
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                <Image
-                    src="/naver-search.svg"
-                    className={styles.searchImage}
-                    alt="Naver Search Bar Image"
-                    width={424.48}
-                    height={40}
-                />
-                {/* <div className={styles.textOverlay}>서버시간 타임워치 검색</div> */}
-            </a>
         </div>
     );
 }

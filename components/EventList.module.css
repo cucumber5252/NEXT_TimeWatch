@@ -1,5 +1,5 @@
 .footerTimeSoon {
-    color: #01c915;
+    color: #0077ff;
     text-align: left;
     font-size: 19.2px;
     font-weight: 700;
@@ -20,7 +20,7 @@
 }
 
 .eventListContainer::-webkit-scrollbar-thumb {
-    background-color: #01c915;
+    background-color: #0077ff;
     border-radius: 16px;
     border: 2.4px solid transparent;
     background-clip: content-box;
@@ -203,7 +203,7 @@
     gap: 3.2px;
 }
 
-.mascotContainer {
+.logoContainer {
     position: relative;
     width: 100%;
     height: 300px;
@@ -214,13 +214,13 @@
     margin-top: 20px; /* 텍스트와의 간격 */
 }
 
-.mascotImage {
+.logoImage {
     position: relative;
-    width: 160px; /* 마스코트 사이즈 조정 */
+    width: 200px; /* 마스코트 사이즈 조정 */
     height: auto; /* 비율 유지 */
 }
 
-.cloverImage {
+.mascotImage {
     position: absolute;
     width: 60px; /* 클로버 사이즈 조정 */
     height: auto; /* 비율 유지 */

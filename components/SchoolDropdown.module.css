@@ -95,7 +95,7 @@
 }
 
 .dropdownList::-webkit-scrollbar-thumb {
-    background-color: #01c915;
+    background-color: #0077ff;
     border-radius: 16px;
     border: 2.4px solid transparent;
     background-clip: content-box;

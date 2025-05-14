@@ -203,7 +203,7 @@ export default function AdminPage() {
         return (
             <div className="flex items-center justify-center min-h-screen bg-black">
                 <div className="p-6 bg-[#161616] rounded-lg shadow-md text-center">
-                    <div className="w-16 h-16 border-4 border-t-[#01c915] border-r-transparent border-b-transparent border-l-transparent rounded-full animate-spin mx-auto mb-4"></div>
+                    <div className="w-16 h-16 border-4 border-t-[#0077FF] border-r-transparent border-b-transparent border-l-transparent rounded-full animate-spin mx-auto mb-4"></div>
                     <p className="text-white">로딩 중...</p>
                 </div>
             </div>
@@ -225,7 +225,7 @@ export default function AdminPage() {
                             <button
                                 className={`px-4 py-2 ${
                                     activeTab === 'list'
-                                        ? 'text-[#01c915] border-b-2 border-[#01c915] font-medium'
+                                        ? 'text-[#0077FF] border-b-2 border-[#0077FF] font-medium'
                                         : 'text-gray-300 hover:text-white'
                                 }`}
                                 onClick={() => setActiveTab('list')}
@@ -235,7 +235,7 @@ export default function AdminPage() {
                             <button
                                 className={`px-4 py-2 ${
                                     activeTab === 'add'
-                                        ? 'text-[#01c915] border-b-2 border-[#01c915] font-medium'
+                                        ? 'text-[#0077FF] border-b-2 border-[#0077FF] font-medium'
                                         : 'text-gray-300 hover:text-white'
                                 }`}
                                 onClick={() => setActiveTab('add')}
@@ -257,7 +257,7 @@ export default function AdminPage() {
                             type="date"
                             value={selectedDate}
                             onChange={handleDateChange}
-                            className="border border-[#333] bg-[#222] text-white p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[#01c915]"
+                            className="border border-[#333] bg-[#222] text-white p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0077FF]"
                         />
                     </div>
 
@@ -274,7 +274,7 @@ export default function AdminPage() {
                                         name="time"
                                         value={newEvent.time}
                                         onChange={handleNewEventChange}
-                                        className="border border-[#333] bg-[#222] text-white p-2 w-full rounded-md focus:outline-none focus:ring-2 focus:ring-[#01c915]"
+                                        className="border border-[#333] bg-[#222] text-white p-2 w-full rounded-md focus:outline-none focus:ring-2 focus:ring-[#0077FF]"
                                         required
                                     />
                                 </div>
@@ -284,7 +284,7 @@ export default function AdminPage() {
                                         name="category"
                                         value={newEvent.category}
                                         onChange={handleNewEventChange}
-                                        className="border border-[#333] bg-[#222] text-white p-2 w-full rounded-md focus:outline-none focus:ring-2 focus:ring-[#01c915]"
+                                        className="border border-[#333] bg-[#222] text-white p-2 w-full rounded-md focus:outline-none focus:ring-2 focus:ring-[#0077FF]"
                                         required
                                     >
                                         <option value="예매">예매</option>
@@ -302,7 +302,7 @@ export default function AdminPage() {
                                     name="title"
                                     value={newEvent.title}
                                     onChange={handleNewEventChange}
-                                    className="border border-[#333] bg-[#222] text-white p-2 w-full rounded-md focus:outline-none focus:ring-2 focus:ring-[#01c915]"
+                                    className="border border-[#333] bg-[#222] text-white p-2 w-full rounded-md focus:outline-none focus:ring-2 focus:ring-[#0077FF]"
                                     required
                                 />
                             </div>
@@ -314,7 +314,7 @@ export default function AdminPage() {
                                     name="link"
                                     value={newEvent.link}
                                     onChange={handleNewEventChange}
-                                    className="border border-[#333] bg-[#222] text-white p-2 w-full rounded-md focus:outline-none focus:ring-2 focus:ring-[#01c915]"
+                                    className="border border-[#333] bg-[#222] text-white p-2 w-full rounded-md focus:outline-none focus:ring-2 focus:ring-[#0077FF]"
                                     required
                                 />
                             </div>
@@ -326,7 +326,7 @@ export default function AdminPage() {
                                     name="img"
                                     value={newEvent.img}
                                     onChange={handleNewEventChange}
-                                    className="border border-[#333] bg-[#222] text-white p-2 w-full rounded-md focus:outline-none focus:ring-2 focus:ring-[#01c915]"
+                                    className="border border-[#333] bg-[#222] text-white p-2 w-full rounded-md focus:outline-none focus:ring-2 focus:ring-[#0077FF]"
                                     required
                                 />
                             </div>
@@ -337,7 +337,7 @@ export default function AdminPage() {
                                     <button
                                         type="button"
                                         onClick={addCompany}
-                                        className="text-[#01c915] hover:text-[#02a012] text-sm bg-[#0a280e] hover:bg-[#0c3c10] px-3 py-1 rounded-md transition"
+                                        className="text-[#0077FF] hover:text-[#02a012] text-sm bg-[#0a280e] hover:bg-[#0c3c10] px-3 py-1 rounded-md transition"
                                     >
                                         + 회사 추가
                                     </button>
@@ -389,7 +389,7 @@ export default function AdminPage() {
                                 <button
                                     type="submit"
                                     disabled={isLoading}
-                                    className="bg-[#01c915] hover:bg-[#02a012] text-black font-semibold px-6 py-2 rounded-md"
+                                    className="bg-[#0077FF] hover:bg-[#02a012] text-black font-semibold px-6 py-2 rounded-md"
                                 >
                                     {isLoading ? '저장 중...' : '이벤트 저장하기'}
                                 </button>
