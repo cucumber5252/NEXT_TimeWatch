@@ -22,7 +22,7 @@ function SimpleServerTimeStatus({ lastSync, isLoading }) {
         <div className={`${styles.info} ${isLoading ? styles.blink : ''}`}>
             {isLoading ? (
                 <div className={styles.loadingMessage}>
-                    <span className={styles.greenText}> lucktime</span> 알고리즘으로
+                    <span className={styles.greenText}> timewatch</span> 알고리즘으로
                     <br />
                     서버시간을 정교하게
                     <br />

@@ -54,7 +54,7 @@ const ServerTimeInfo = ({ website, lastSync, isLoading }) => {
             <div className={`${styles.info} ${isLoading ? styles.blink : ''}`}>
                 {isLoading ? (
                     <span>
-                        <span className={styles.oneSecond}> lucktime</span> 알고리즘으로 서버시간을 정교하게 계산하고
+                        <span className={styles.oneSecond}> timewatch</span> 알고리즘으로 서버시간을 정교하게 계산하고
                         있어요.
                         <div></div>
                         서버의 상태에 따라 시간이 걸릴 수 있어요.

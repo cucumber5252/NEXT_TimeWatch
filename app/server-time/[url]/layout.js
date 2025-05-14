@@ -24,7 +24,7 @@ export async function generateMetadata({ params }) {
     // 기본 메타 설명
     const defaultDescription = `${pageName}${
         !pageName.includes(url) ? `(${url})` : ''
-    }의 가장 정확한 서버시간을 럭타임에서 확인하세요! 티켓팅, 수강신청, 음악방송 사전녹화, 한정판 구매 등 모든 선착순 신청 전용시계, 행운을 가져다주는 서버시간 lucktime.`;
+    }의 가장 정확한 서버시간을 타임워치에서 확인하세요! 티켓팅, 수강신청, 음악방송 사전녹화, 한정판 구매 등 모든 선착순 신청 전용시계, 행운을 가져다주는 서버시간 timewatch.`;
 
     // 특정 URL 경로에 대해 다른 메타 설명 설정
     let pageDescription = defaultDescription;
@@ -33,7 +33,7 @@ export async function generateMetadata({ params }) {
             '가장 정확한 위버스 서버시간 확인하기! 인기가요 뮤직뱅크 음악중심 엠카 사전녹화 신청, 라이즈 보넥도 갓세븐 아이브 공방 사녹 생방';
     }
 
-    const pageTitle = `${pageName} 서버시간 - lucktime 럭타임`;
+    const pageTitle = `${pageName} 서버시간 - timewatch 타임워치`;
 
     return {
         title: pageTitle,
@@ -41,14 +41,14 @@ export async function generateMetadata({ params }) {
         openGraph: {
             title: pageTitle,
             description: pageDescription,
-            url: `https://www.luckti.me/server-time/${url}`,
-            siteName: '행운의 서버시간 lucktime 럭타임',
+            url: `https://time-watch-tau.vercel.app/server-time/${url}`,
+            siteName: '행운의 서버시간 timewatch 타임워치',
             images: [
                 {
-                    url: 'https://www.luckti.me/og_image.jpg',
+                    url: 'https://time-watch-tau.vercel.app/og_image.jpg',
                     width: 800,
                     height: 600,
-                    alt: 'lucktime 럭타임',
+                    alt: 'timewatch 타임워치',
                 },
             ],
             type: 'website',
@@ -57,7 +57,7 @@ export async function generateMetadata({ params }) {
             card: 'summary_large_image',
             title: pageTitle,
             description: pageDescription,
-            images: ['https://www.luckti.me/og_image.jpg'],
+            images: ['https://time-watch-tau.vercel.app/og_image.jpg'],
         },
     };
 }

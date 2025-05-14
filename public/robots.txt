@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://www.luckti.me
+Host: https://time-watch-tau.vercel.app
 
 # Sitemaps
-Sitemap: https://www.luckti.me/sitemap.xml
+Sitemap: https://time-watch-tau.vercel.app/sitemap.xml

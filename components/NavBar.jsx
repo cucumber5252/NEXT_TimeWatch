@@ -46,7 +46,7 @@ const NavBar = () => {
                 <div className={styles.logo} onClick={handleLogoClick}>
                     <Image
                         src="/logo.svg"
-                        alt="lucktime logo"
+                        alt="timewatch logo"
                         style={{ cursor: 'pointer' }}
                         width={137.55}
                         height={27.99}

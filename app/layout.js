@@ -6,32 +6,32 @@ import { GoogleTagManager } from '@next/third-parties/google';
 import HotjarTracker from '../components/HotJarTracker.jsx'; // Import HotjarTracker component
 
 export const metadata = {
-    title: '행운의 서버시간 lucktime 럭타임',
+    title: '행운의 서버시간 timewatch 타임워치',
     description:
         '가장 정교한 밀리초 서버시간. 티켓팅 인터파크 예스24 멜론티켓 티켓링크 쿠팡플레이, 수강신청, 구글폼, 음악방송 사전녹화 선착순 신청 전용시계',
     icons: {
         icon: '/favicon_48.svg',
     },
     openGraph: {
-        title: '행운의 서버시간 lucktime 럭타임',
+        title: '행운의 서버시간 timewatch 타임워치',
         description: '믿을 수 있는 가장 트렌디한 서버시간',
-        url: 'https://www.luckti.me/',
-        siteName: '행운의 서버시간 lucktime 럭타임',
+        url: 'https://time-watch-tau.vercel.app/',
+        siteName: '행운의 서버시간 timewatch 타임워치',
         images: [
             {
-                url: 'https://www.luckti.me/og_image.jpg',
+                url: 'https://time-watch-tau.vercel.app/og_image.jpg',
                 width: 800,
                 height: 600,
-                alt: '행운의 서버시간 lucktime 럭타임',
+                alt: '행운의 서버시간 timewatch 타임워치',
             },
         ],
         type: 'website',
     },
     twitter: {
         card: 'summary_large_image',
-        title: '행운의 서버시간 lucktime 럭타임',
+        title: '행운의 서버시간 timewatch 타임워치',
         description: '믿을 수 있는 가장 트렌디한 서버시간',
-        images: ['https://www.luckti.me/og_image.jpg'],
+        images: ['https://time-watch-tau.vercel.app/og_image.jpg'],
     },
 };
 
@@ -43,16 +43,16 @@ export default function RootLayout({ children }) {
                 <link rel="icon" href="/favicon.ico" />
 
                 {/* 애플 메타태그 추가 */}
-                <meta name="apple-mobile-web-app-title" content="lucktime" />
+                <meta name="apple-mobile-web-app-title" content="timewatch" />
                 <meta name="mobile-web-app-capable" content="yes" />
                 <meta name="apple-mobile-web-app-status-bar-style" content="#000000" />
 
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <meta charSet="UTF-8" />
                 <meta name="robots" content="index, follow" />
-                <link rel="canonical" href="https://www.luckti.me/" />
+                <link rel="canonical" href="https://time-watch-tau.vercel.app/" />
                 <meta name="theme-color" content="#000000" />
-                <meta name="application-name" content="lucktime" />
+                <meta name="application-name" content="timewatch" />
 
                 {/* 애플 터치 아이콘 추가 */}
                 <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.svg" />

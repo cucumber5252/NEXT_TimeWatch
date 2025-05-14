@@ -53,7 +53,7 @@ const EventNav = () => {
                 <div className={styles.text}>
                     <div className={styles.guide}>왼쪽의 아이콘을 눌러 사용 방법을 알아보세요!</div>
                     {/* <div className={styles.guide}>
-                            더 재밌게 lucktime을 이용하려면{' '}
+                            더 재밌게 timewatch을 이용하려면{' '}
                             <Link href="/blog">
                                 <span className={styles.underline}>블로그</span>
                             </Link>
