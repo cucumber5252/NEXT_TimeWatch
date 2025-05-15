@@ -66,7 +66,7 @@
 
 .day:hover,
 .selectedDay {
-    background-color: rgba(0, 128, 0, 0.1);
+    /* background-color: rgba(0, 128, 0, 0.1); */
     border: 1.2px solid #0077ff;
     border-radius: 50%;
 }
