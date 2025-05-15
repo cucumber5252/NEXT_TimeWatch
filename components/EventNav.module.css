@@ -1,0 +1,97 @@
+.eventNavContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 9.6px; /* 12px -> 9.6px */
+    width: 90%;
+    justify-content: flex-start;
+    margin-top: 20px;
+    margin-bottom: 16px; /* 아래에 학교검색 둘거면 9.6으로 바꾸기 */
+}
+
+.firstRow {
+    display: flex;
+    justify-content: flex-start; /* 아이콘이 텍스트의 첫 줄에 맞게 */
+    align-items: center;
+    font-size: 0.8em;
+}
+
+.navTitle {
+    color: #fff;
+    font-weight: bold;
+    padding-left: 6.4px; /* 8px -> 6.4px */
+    line-height: 1.5; /* 텍스트의 줄 높이를 설정 */
+}
+
+.firstRow > img {
+    width: 19.2px; /* 24px -> 19.2px */
+    height: 19.2px; /* 24px -> 19.2px */
+    align-self: flex-start; /* 아이콘이 첫 줄에 맞게 */
+}
+
+.secondRow {
+    display: flex;
+    justify-content: flex-start; /* 아이콘이 텍스트의 첫 줄에 맞게 */
+    align-items: center;
+    position: relative; /* 추가: 말풍선 위치를 절대 위치로 설정 */
+    font-size: 0.8em;
+}
+
+.thirdRow {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.img {
+    cursor: pointer; /* 추가: 마우스 포인터 변경 */
+    display: flex;
+}
+
+.img > img {
+    align-self: flex-start; /* 아이콘이 첫 줄에 맞게 */
+}
+
+.thirdRow {
+    display: flex;
+    padding-left: 19.2px; /* 24px -> 19.2px */
+    /* align-items: flex-start; 아이콘이 텍스트의 첫 줄에 맞게 */
+}
+
+.guide {
+    padding-left: 6.4px; /* 8px -> 6.4px */
+    line-height: 1.5; /* 텍스트의 줄 높이를 설정 */
+    flex-wrap: wrap; /* 텍스트가 두 줄로 될 수 있도록 추가 */
+}
+
+.tooltipguide {
+    padding-left: 6.4px; /* 8px -> 6.4px */
+    line-height: 1.5; /* 텍스트의 줄 높이를 설정 */
+    flex-wrap: wrap; /* 텍스트가 두 줄로 될 수 있도록 추가 */
+    color: black;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.underline:hover {
+    color: #0077ff;
+}
+
+.tooltip {
+    position: absolute;
+    top: 24px; /* 30px -> 24px */
+    left: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 8px; /* 10px -> 8px */
+    border-radius: 4px; /* 5px -> 4px */
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1); /* 0px 0px 10px -> 0px 0px 8px */
+    z-index: 10;
+}
+
+@media (max-width: 440px) {
+    .eventNavContainer {
+        width: 100%;
+        margin-bottom: 16px;
+    }
+}

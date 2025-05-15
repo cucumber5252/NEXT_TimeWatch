@@ -1,0 +1,44 @@
+.timeSimpleContainer {
+    width: 80%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 76.8px; /* 큰 텍스트 크기 */
+    color: white;
+}
+
+.separator {
+    padding: 0 10px;
+}
+
+.hours,
+.minutes,
+.seconds,
+.milliseconds {
+    font-weight: bold;
+}
+
+.seconds {
+    color: #0077ff;
+}
+
+/* .milliseconds {
+    margin-left: 20px;
+    font-size: 38.4px;
+} */
+
+.rainbow {
+    background: linear-gradient(90deg, #ed5564, #ffce54, yellow, #a0d568, #4fc1e8, #ac92eb, violet);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: gradient 5.2s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}

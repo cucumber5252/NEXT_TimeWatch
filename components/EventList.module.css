@@ -1,0 +1,303 @@
+.footerTimeSoon {
+    color: #0077ff;
+    text-align: left;
+    font-size: 19.2px;
+    font-weight: 700;
+}
+
+.eventListContainer {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.eventListContainer::-webkit-scrollbar {
+    width: 9.6px;
+}
+
+.eventListContainer::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.eventListContainer::-webkit-scrollbar-thumb {
+    background-color: #0077ff;
+    border-radius: 16px;
+    border: 2.4px solid transparent;
+    background-clip: content-box;
+}
+
+.eventGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8%;
+}
+
+.eventItem {
+    width: 100%;
+    height: 208px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    position: relative;
+    border-radius: 9.6px;
+}
+
+.eventLink {
+    text-decoration: none;
+    color: white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+.eventImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 9.6px;
+}
+
+.eventOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.eventLink:hover .eventOverlay {
+    opacity: 1;
+}
+
+.eventTitle {
+    color: white;
+    font-size: 12.8px;
+    margin-top: 6.4px;
+    text-align: left;
+    width: 100%;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* 최대 2줄로 제한 */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.5; /* 줄 간격 조절 */
+    min-height: calc(1.5em * 2); /* 2줄 높이로 고정 */
+    max-height: calc(1.5em * 2); /* 2줄 높이로 고정 */
+}
+
+.eventDate {
+    color: #ffffff;
+    font-size: 12.8px;
+    margin-top: 3.2px;
+    text-align: left;
+    width: 100%;
+    font-weight: 200;
+}
+
+.eventTime,
+.eventCompany,
+.companyButton {
+    font-size: 8px; /* 공통된 작은 폰트 크기 */
+}
+
+.eventTime {
+    text-align: left;
+    color: black;
+}
+
+.eventCompany {
+    text-align: right;
+    color: black;
+    font-size: 9.6px;
+}
+
+.noEvents {
+    text-align: center;
+    color: white;
+    padding: 16px;
+    font-size: 0.8em;
+}
+
+.eventFooter {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1e1e1e;
+    padding: 9.6px;
+    border-radius: 0px 0px 9.6px 9.6px;
+    justify-content: center;
+}
+
+.companyButton {
+    display: inline-block;
+    padding: 4.8px 9.6px;
+    background-color: #2c2c2c;
+    border-radius: 6.4px;
+}
+
+.footerContent {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.footerLeft {
+    display: flex;
+    align-items: center;
+    gap: 9.6px;
+}
+
+.footerTime {
+    text-align: left;
+    color: white;
+    font-size: 19.2px;
+    font-weight: 700;
+}
+
+.footerCompany {
+    color: white;
+    font-size: 11.2px;
+}
+
+.addButton {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.addButton:hover {
+    opacity: 0.8;
+}
+
+.bookmarkImage {
+    height: 19.2px;
+}
+
+.noFavoriteText {
+    margin-top: 12%;
+    margin-bottom: 12%;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.companyContainer {
+    display: flex;
+    gap: 3.2px;
+}
+
+.logoContainer {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center; /* 중앙 정렬 */
+    align-items: center;
+    overflow: hidden;
+    margin-top: 20px; /* 텍스트와의 간격 */
+}
+
+.logoImage {
+    position: relative;
+    width: 200px; /* 마스코트 사이즈 조정 */
+    height: auto; /* 비율 유지 */
+}
+
+.mascotImage {
+    position: absolute;
+    width: 60px; /* 클로버 사이즈 조정 */
+    height: auto; /* 비율 유지 */
+    animation: fadeInOut 3s ease-in-out;
+}
+
+.disabledButton {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+}
+
+@media (max-width: 440px) {
+    .eventGrid {
+        grid-template-columns: 1fr; /* 한 열로 정렬하여 화면 너비에 맞춤 */
+        gap: 0.5rem; /* 반응형 간격 */
+    }
+
+    .eventTitle {
+        font-size: 1rem; /* 반응형 폰트 크기 */
+        margin-top: 0.4rem; /* 반응형 상단 여백 */
+        line-height: 1.2; /* 줄 간격 조정 */
+        min-height: calc(1.2em * 2); /* 2줄 높이로 고정 */
+        max-height: calc(1.2em * 2); /* 2줄 높이로 고정 */
+    }
+
+    .eventDate {
+        font-size: 0.75rem; /* 반응형 폰트 크기 */
+        margin-top: 0.2rem; /* 반응형 상단 여백 */
+    }
+
+    .footerTime,
+    .footerTimeSoon {
+        font-size: 1rem; /* 반응형 폰트 크기 */
+    }
+
+    .noEvents {
+        font-size: 0.75rem; /* 반응형 폰트 크기 */
+    }
+
+    .footerCompany {
+        font-size: 0.7rem; /* 반응형 폰트 크기 */
+    }
+
+    .companyButton {
+        font-size: 0.7rem; /* 반응형 폰트 크기 */
+        padding: 0.3rem 0.5rem; /* 반응형 패딩 */
+        border-radius: 0.4rem; /* 반응형 둥근 모서리 */
+    }
+
+    .footerLeft {
+        gap: 0.5rem; /* 반응형 간격 */
+    }
+
+    .bookmarkImage {
+        height: 1rem; /* 반응형 이미지 크기 */
+    }
+
+    .addButton {
+        margin-left: auto; /* 반응형 간격 */
+    }
+
+    .companyContainer {
+        gap: 0.2rem; /* 반응형 간격 */
+    }
+}

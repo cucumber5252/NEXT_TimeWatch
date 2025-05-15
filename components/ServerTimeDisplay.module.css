@@ -1,0 +1,889 @@
+.timeDisplayContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px; /* 20px -> 16px */
+    color: white;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.timePart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 115.2px; /* 144px -> 115.2px */
+    height: 115.2px; /* 144px -> 115.2px */
+    background-color: white;
+    color: black;
+    font-size: 41.6px; /* 52px -> 41.6px */
+    font-weight: 700;
+    border-radius: 19.2px; /* 24px -> 19.2px */
+    transition: background-color 1s linear;
+}
+
+.separator {
+    font-size: 76.8px; /* 96px -> 76.8px */
+    font-weight: 700;
+    color: white;
+}
+
+.greenSeparator {
+    color: #0077ff;
+}
+
+.greenBackground {
+    background-color: #0077ff;
+    color: white;
+}
+
+.rainbow {
+    background: linear-gradient(90deg, #ed5564, #ffce54, yellow, #a0d568, #4fc1e8, #ac92eb, violet);
+    background-size: 400% 400%;
+    animation: gradient 5.2s ease infinite;
+}
+
+.amPm {
+    font-size: 38.4px; /* 48px -> 38.4px */
+    font-weight: 700;
+    color: white;
+    position: absolute;
+    right: calc(100% + 19.2px); /* 24px -> 19.2px */
+}
+
+.milliseconds {
+    font-size: 38.4px; /* 48px -> 38.4px */
+    font-weight: 700;
+    color: white;
+    position: absolute;
+    left: calc(100% + 19.2px); /* 24px -> 19.2px */
+    max-width: calc(100% - 38.4px); /* 48px -> 38.4px */
+    white-space: nowrap;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+/* @media (max-width: 1280px) {
+    .timeDisplay {
+        gap: 16px;
+        margin-bottom: 60px;
+    }
+
+    .timePart {
+        width: 120px;
+        height: 120px;
+        font-size: 48px;
+        border-radius: 20px;
+    }
+
+    .separator {
+        font-size: 72px;
+    }
+
+    .amPm {
+        font-size: 40px;
+        right: calc(100% + 16px);
+    }
+
+    .milliseconds {
+        font-size: 40px;
+        left: calc(100% + 16px);
+    }
+}
+
+@media (max-width: 768px) {
+    .timeDisplay {
+        gap: 24px;
+        margin-bottom: 60px;
+    }
+
+    .timePart {
+        width: 120px;
+        height: 120px;
+        font-size: 40px;
+        border-radius: 20px;
+    }
+
+    .separator {
+        font-size: 40px;
+    }
+
+    .amPm {
+        font-size: 32px;
+        right: calc(100% + 16px);
+    }
+
+    .milliseconds {
+        font-size: 32px;
+        left: calc(100% + 16px);
+    }
+}
+
+@media (max-width: 650px) {
+    .timeDisplay {
+        gap: 16px;
+        margin-bottom: 60px;
+    }
+
+    .timePart {
+        width: 100px;
+        height: 100px;
+        font-size: 32px;
+        border-radius: 20px;
+    }
+
+    .separator {
+        font-size: 40px;
+    }
+
+    .amPm {
+        font-size: 24px;
+        right: calc(100% + 12px);
+    }
+
+    .milliseconds {
+        font-size: 24px;
+        left: calc(100% + 12px);
+    }
+}
+
+@media (max-width: 500px) {
+    .timeDisplay {
+        gap: 12px;
+        margin-bottom: 60px;
+    }
+
+    .timePart {
+        width: 80px;
+        height: 80px;
+        font-size: 24px;
+        border-radius: 16px;
+    }
+
+    .separator {
+        font-size: 24px;
+    }
+
+    .amPm {
+        font-size: 16px;
+        right: calc(100% + 8px);
+    }
+
+    .milliseconds {
+        font-size: 16px;
+        left: calc(100% + 8px);
+    }
+}
+
+@media (max-width: 440px) {
+    .timeDisplay {
+        gap: 8px;
+        margin-bottom: 60px;
+    }
+
+    .timePart {
+        width: 80px;
+        height: 80px;
+        font-size: 24px;
+        border-radius: 12px;
+    }
+
+    .separator {
+        font-size: 24px;
+    }
+
+    .amPm {
+        font-size: 16px;
+        right: calc(100% + 12px);
+    }
+
+    .milliseconds {
+        font-size: 16px;
+        left: calc(100% + 12px);
+    }
+}
+
+@media (max-width: 400px) {
+    .timeDisplay {
+        gap: 4px;
+        margin-bottom: 60px;
+    }
+
+    .timePart {
+        width: 68px;
+        height: 68px;
+        font-size: 20px;
+        border-radius: 12px;
+    }
+
+    .separator {
+        font-size: 24px;
+    }
+
+    .amPm {
+        font-size: 12px;
+        right: calc(100% + 8px);
+    }
+
+    .milliseconds {
+        font-size: 12px;
+        left: calc(100% + 8px);
+    }
+} */
+
+.blink {
+    animation: blink-animation 1s steps(5, start) infinite;
+}
+
+@keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
+}
+
+.loadingMessage {
+    font-size: 1.5rem;
+    text-align: center;
+    color: #333;
+}
+
+/* ServerTimeDisplay.module.css */
+
+.ldsRoller,
+.ldsRoller div,
+.ldsRoller div:after {
+    box-sizing: border-box;
+}
+.ldsRoller {
+    display: inline-block;
+    position: relative;
+    width: 80px; /* 스피너 전체 크기 */
+    height: 80px; /* 스피너 전체 크기 */
+}
+.ldsRoller div {
+    animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    transform-origin: 40px 40px; /* 스피너 중심점 */
+}
+.ldsRoller div:after {
+    content: ' ';
+    display: block;
+    position: absolute;
+    width: 8px; /* 점 크기 */
+    height: 8px; /* 점 크기 */
+    border-radius: 50%;
+    background: currentColor;
+    margin: -4px 0 0 -4px; /* 점 위치 */
+}
+
+/* 첫 번째 스피너 */
+.ldsRoller1 div:nth-child(1) {
+    animation-delay: -0.036s;
+}
+.ldsRoller1 div:nth-child(1):after {
+    top: 62.62742px;
+    left: 62.62742px;
+}
+.ldsRoller1 div:nth-child(2) {
+    animation-delay: -0.072s;
+}
+.ldsRoller1 div:nth-child(2):after {
+    top: 67.71281px;
+    left: 56px;
+}
+.ldsRoller1 div:nth-child(3) {
+    animation-delay: -0.108s;
+}
+.ldsRoller1 div:nth-child(3):after {
+    top: 70.90963px;
+    left: 48.28221px;
+}
+.ldsRoller1 div:nth-child(4) {
+    animation-delay: -0.144s;
+}
+.ldsRoller1 div:nth-child(4):after {
+    top: 72px;
+    left: 40px;
+}
+.ldsRoller1 div:nth-child(5) {
+    animation-delay: -0.18s;
+}
+.ldsRoller1 div:nth-child(5):after {
+    top: 70.90963px;
+    left: 31.71779px;
+}
+.ldsRoller1 div:nth-child(6) {
+    animation-delay: -0.216s;
+}
+.ldsRoller1 div:nth-child(6):after {
+    top: 67.71281px;
+    left: 24px;
+}
+.ldsRoller1 div:nth-child(7) {
+    animation-delay: -0.252s;
+}
+.ldsRoller1 div:nth-child(7):after {
+    top: 62.62742px;
+    left: 17.37258px;
+}
+.ldsRoller1 div:nth-child(8) {
+    animation-delay: -0.288s;
+}
+.ldsRoller1 div:nth-child(8):after {
+    top: 56px;
+    left: 12.28719px;
+}
+
+/* 두 번째 스피너 (0.15초 딜레이) */
+.ldsRoller2 div:nth-child(1) {
+    animation-delay: 0.114s;
+}
+.ldsRoller2 div:nth-child(1):after {
+    top: 62.62742px;
+    left: 62.62742px;
+}
+.ldsRoller2 div:nth-child(2) {
+    animation-delay: 0.078s;
+}
+.ldsRoller2 div:nth-child(2):after {
+    top: 67.71281px;
+    left: 56px;
+}
+.ldsRoller2 div:nth-child(3) {
+    animation-delay: 0.042s;
+}
+.ldsRoller2 div:nth-child(3):after {
+    top: 70.90963px;
+    left: 48.28221px;
+}
+.ldsRoller2 div:nth-child(4) {
+    animation-delay: 0.006s;
+}
+.ldsRoller2 div:nth-child(4):after {
+    top: 72px;
+    left: 40px;
+}
+.ldsRoller2 div:nth-child(5) {
+    animation-delay: -0.03s;
+}
+.ldsRoller2 div:nth-child(5):after {
+    top: 70.90963px;
+    left: 31.71779px;
+}
+.ldsRoller2 div:nth-child(6) {
+    animation-delay: -0.066s;
+}
+.ldsRoller2 div:nth-child(6):after {
+    top: 67.71281px;
+    left: 24px;
+}
+.ldsRoller2 div:nth-child(7) {
+    animation-delay: -0.102s;
+}
+.ldsRoller2 div:nth-child(7):after {
+    top: 62.62742px;
+    left: 17.37258px;
+}
+.ldsRoller2 div:nth-child(8) {
+    animation-delay: -0.138s;
+}
+.ldsRoller2 div:nth-child(8):after {
+    top: 56px;
+    left: 12.28719px;
+}
+
+/* 세 번째 스피너 (0.3초 딜레이) */
+.ldsRoller3 div:nth-child(1) {
+    animation-delay: 0.264s;
+}
+.ldsRoller3 div:nth-child(1):after {
+    top: 62.62742px;
+    left: 62.62742px;
+}
+.ldsRoller3 div:nth-child(2) {
+    animation-delay: 0.228s;
+}
+.ldsRoller3 div:nth-child(2):after {
+    top: 67.71281px;
+    left: 56px;
+}
+.ldsRoller3 div:nth-child(3) {
+    animation-delay: 0.192s;
+}
+.ldsRoller3 div:nth-child(3):after {
+    top: 70.90963px;
+    left: 48.28221px;
+}
+.ldsRoller3 div:nth-child(4) {
+    animation-delay: 0.156s;
+}
+.ldsRoller3 div:nth-child(4):after {
+    top: 72px;
+    left: 40px;
+}
+.ldsRoller3 div:nth-child(5) {
+    animation-delay: 0.12s;
+}
+.ldsRoller3 div:nth-child(5):after {
+    top: 70.90963px;
+    left: 31.71779px;
+}
+.ldsRoller3 div:nth-child(6) {
+    animation-delay: 0.084s;
+}
+.ldsRoller3 div:nth-child(6):after {
+    top: 67.71281px;
+    left: 24px;
+}
+.ldsRoller3 div:nth-child(7) {
+    animation-delay: 0.048s;
+}
+.ldsRoller3 div:nth-child(7):after {
+    top: 62.62742px;
+    left: 17.37258px;
+}
+.ldsRoller3 div:nth-child(8) {
+    animation-delay: 0.012s;
+}
+.ldsRoller3 div:nth-child(8):after {
+    top: 56px;
+    left: 12.28719px;
+}
+
+@keyframes lds-roller {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
+}
+
+.loadingMessage {
+    font-size: 1.5rem;
+    text-align: center;
+    color: #333;
+}
+
+/* ServerTimeDisplay.module.css */
+
+.ldsRoller,
+.ldsRoller div,
+.ldsRoller div:after {
+    box-sizing: border-box;
+}
+.ldsRoller {
+    display: inline-block;
+    position: relative;
+    width: 80px; /* 스피너 전체 크기 */
+    height: 80px; /* 스피너 전체 크기 */
+}
+.ldsRoller div {
+    animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    transform-origin: 40px 40px; /* 스피너 중심점 */
+}
+.ldsRoller div:after {
+    content: ' ';
+    display: block;
+    position: absolute;
+    width: 8px; /* 점 크기 */
+    height: 8px; /* 점 크기 */
+    border-radius: 50%;
+    background: currentColor;
+    margin: -4px 0 0 -4px; /* 점 위치 */
+}
+
+/* 첫 번째 스피너 */
+.ldsRoller1 div:nth-child(1) {
+    animation-delay: -0.036s;
+}
+.ldsRoller1 div:nth-child(1):after {
+    top: 62.62742px;
+    left: 62.62742px;
+}
+.ldsRoller1 div:nth-child(2) {
+    animation-delay: -0.072s;
+}
+.ldsRoller1 div:nth-child(2):after {
+    top: 67.71281px;
+    left: 56px;
+}
+.ldsRoller1 div:nth-child(3) {
+    animation-delay: -0.108s;
+}
+.ldsRoller1 div:nth-child(3):after {
+    top: 70.90963px;
+    left: 48.28221px;
+}
+.ldsRoller1 div:nth-child(4) {
+    animation-delay: -0.144s;
+}
+.ldsRoller1 div:nth-child(4):after {
+    top: 72px;
+    left: 40px;
+}
+.ldsRoller1 div:nth-child(5) {
+    animation-delay: -0.18s;
+}
+.ldsRoller1 div:nth-child(5):after {
+    top: 70.90963px;
+    left: 31.71779px;
+}
+.ldsRoller1 div:nth-child(6) {
+    animation-delay: -0.216s;
+}
+.ldsRoller1 div:nth-child(6):after {
+    top: 67.71281px;
+    left: 24px;
+}
+.ldsRoller1 div:nth-child(7) {
+    animation-delay: -0.252s;
+}
+.ldsRoller1 div:nth-child(7):after {
+    top: 62.62742px;
+    left: 17.37258px;
+}
+.ldsRoller1 div:nth-child(8) {
+    animation-delay: -0.288s;
+}
+.ldsRoller1 div:nth-child(8):after {
+    top: 56px;
+    left: 12.28719px;
+}
+
+/* 두 번째 스피너 (0.15초 딜레이) */
+.ldsRoller2 div:nth-child(1) {
+    animation-delay: 0.114s;
+}
+.ldsRoller2 div:nth-child(1):after {
+    top: 62.62742px;
+    left: 62.62742px;
+}
+.ldsRoller2 div:nth-child(2) {
+    animation-delay: 0.078s;
+}
+.ldsRoller2 div:nth-child(2):after {
+    top: 67.71281px;
+    left: 56px;
+}
+.ldsRoller2 div:nth-child(3) {
+    animation-delay: 0.042s;
+}
+.ldsRoller2 div:nth-child(3):after {
+    top: 70.90963px;
+    left: 48.28221px;
+}
+.ldsRoller2 div:nth-child(4) {
+    animation-delay: 0.006s;
+}
+.ldsRoller2 div:nth-child(4):after {
+    top: 72px;
+    left: 40px;
+}
+.ldsRoller2 div:nth-child(5) {
+    animation-delay: -0.03s;
+}
+.ldsRoller2 div:nth-child(5):after {
+    top: 70.90963px;
+    left: 31.71779px;
+}
+.ldsRoller2 div:nth-child(6) {
+    animation-delay: -0.066s;
+}
+.ldsRoller2 div:nth-child(6):after {
+    top: 67.71281px;
+    left: 24px;
+}
+.ldsRoller2 div:nth-child(7) {
+    animation-delay: -0.102s;
+}
+.ldsRoller2 div:nth-child(7):after {
+    top: 62.62742px;
+    left: 17.37258px;
+}
+.ldsRoller2 div:nth-child(8) {
+    animation-delay: -0.138s;
+}
+.ldsRoller2 div:nth-child(8):after {
+    top: 56px;
+    left: 12.28719px;
+}
+
+/* 세 번째 스피너 (0.3초 딜레이) */
+.ldsRoller3 div:nth-child(1) {
+    animation-delay: 0.264s;
+}
+.ldsRoller3 div:nth-child(1):after {
+    top: 62.62742px;
+    left: 62.62742px;
+}
+.ldsRoller3 div:nth-child(2) {
+    animation-delay: 0.228s;
+}
+.ldsRoller3 div:nth-child(2):after {
+    top: 67.71281px;
+    left: 56px;
+}
+.ldsRoller3 div:nth-child(3) {
+    animation-delay: 0.192s;
+}
+.ldsRoller3 div:nth-child(3):after {
+    top: 70.90963px;
+    left: 48.28221px;
+}
+.ldsRoller3 div:nth-child(4) {
+    animation-delay: 0.156s;
+}
+.ldsRoller3 div:nth-child(4):after {
+    top: 72px;
+    left: 40px;
+}
+.ldsRoller3 div:nth-child(5) {
+    animation-delay: 0.12s;
+}
+.ldsRoller3 div:nth-child(5):after {
+    top: 70.90963px;
+    left: 31.71779px;
+}
+.ldsRoller3 div:nth-child(6) {
+    animation-delay: 0.084s;
+}
+.ldsRoller3 div:nth-child(6):after {
+    top: 67.71281px;
+    left: 24px;
+}
+.ldsRoller3 div:nth-child(7) {
+    animation-delay: 0.048s;
+}
+.ldsRoller3 div:nth-child(7):after {
+    top: 62.62742px;
+    left: 17.37258px;
+}
+.ldsRoller3 div:nth-child(8) {
+    animation-delay: 0.012s;
+}
+.ldsRoller3 div:nth-child(8):after {
+    top: 56px;
+    left: 12.28719px;
+}
+
+@keyframes lds-roller {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 440px) {
+    .timeDisplayContainer {
+        gap: 8px;
+        margin-bottom: 20px;
+    }
+
+    .timePart {
+        width: 80px;
+        height: 80px;
+        font-size: 28px;
+        border-radius: 12px;
+    }
+
+    .separator {
+        font-size: 24px;
+    }
+
+    .amPm {
+        font-size: 20px;
+        right: calc(100% + 12px);
+    }
+
+    .milliseconds {
+        font-size: 20px;
+        left: calc(100% + 12px);
+    }
+
+    .ldsRoller {
+        width: 40px; /* 모바일에서 스피너 크기 줄임 */
+        height: 40px;
+    }
+
+    .ldsRoller div {
+        transform-origin: 20px 20px; /* 모바일에서 스피너 중심점 조정 */
+    }
+
+    .ldsRoller div:after {
+        width: 4px; /* 모바일에서 점 크기 줄임 */
+        height: 4px;
+        margin: -2px 0 0 -2px;
+    }
+
+    /* 스피너 위치 조정 */
+    .ldsRoller1 div:nth-child(1):after,
+    .ldsRoller2 div:nth-child(1):after,
+    .ldsRoller3 div:nth-child(1):after {
+        top: 20px;
+        left: 36px;
+    }
+
+    .ldsRoller1 div:nth-child(2):after,
+    .ldsRoller2 div:nth-child(2):after,
+    .ldsRoller3 div:nth-child(2):after {
+        top: 26px;
+        left: 34px;
+    }
+
+    .ldsRoller1 div:nth-child(3):after,
+    .ldsRoller2 div:nth-child(3):after,
+    .ldsRoller3 div:nth-child(3):after {
+        top: 31px;
+        left: 30px;
+    }
+
+    .ldsRoller1 div:nth-child(4):after,
+    .ldsRoller2 div:nth-child(4):after,
+    .ldsRoller3 div:nth-child(4):after {
+        top: 34px;
+        left: 25px;
+    }
+
+    .ldsRoller1 div:nth-child(5):after,
+    .ldsRoller2 div:nth-child(5):after,
+    .ldsRoller3 div:nth-child(5):after {
+        top: 36px;
+        left: 20px;
+    }
+
+    .ldsRoller1 div:nth-child(6):after,
+    .ldsRoller2 div:nth-child(6):after,
+    .ldsRoller3 div:nth-child(6):after {
+        top: 34px;
+        left: 14px;
+    }
+
+    .ldsRoller1 div:nth-child(7):after,
+    .ldsRoller2 div:nth-child(7):after,
+    .ldsRoller3 div:nth-child(7):after {
+        top: 31px;
+        left: 9px;
+    }
+
+    .ldsRoller1 div:nth-child(8):after,
+    .ldsRoller2 div:nth-child(8):after,
+    .ldsRoller3 div:nth-child(8):after {
+        top: 26px;
+        left: 6px;
+    }
+}
+
+@media (max-width: 400px) {
+    .timeDisplayContainer {
+        gap: 6px; /* 간격 조정 */
+    }
+
+    .timePart {
+        width: 75px; /* 타임 파트 크기 조금 키우기 */
+        height: 75px;
+        font-size: 28px; /* 폰트 크기 조금 키우기 */
+        border-radius: 10px; /* 둥근 모서리 크기 조정 */
+    }
+
+    .separator {
+        font-size: 22px; /* 구분자 크기 조정 */
+    }
+
+    .amPm {
+        font-size: 20px; /* AM/PM 폰트 크기 조금 키우기 */
+        right: calc(100% + 10px); /* 위치 조정 */
+    }
+
+    .milliseconds {
+        font-size: 20px; /* 밀리초 폰트 크기 조금 키우기 */
+        left: calc(100% + 10px); /* 위치 조정 */
+        max-width: calc(100% - 20px); /* 너비 조정 */
+    }
+
+    .ldsRoller {
+        width: 35px; /* 모바일에서 스피너 크기 조금 키움 */
+        height: 35px;
+    }
+
+    .ldsRoller div {
+        transform-origin: 17.5px 17.5px; /* 모바일에서 스피너 중심점 조정 */
+    }
+
+    .ldsRoller div:after {
+        width: 3.5px; /* 모바일에서 점 크기 조금 키움 */
+        height: 3.5px;
+        margin: -1.75px 0 0 -1.75px; /* 모바일에서 점 위치 조정 */
+    }
+
+    /* 스피너 위치 조정 */
+    .ldsRoller1 div:nth-child(1):after,
+    .ldsRoller2 div:nth-child(1):after,
+    .ldsRoller3 div:nth-child(1):after {
+        top: 18px;
+        left: 32px;
+    }
+
+    .ldsRoller1 div:nth-child(2):after,
+    .ldsRoller2 div:nth-child(2):after,
+    .ldsRoller3 div:nth-child(2):after {
+        top: 24px;
+        left: 30px;
+    }
+
+    .ldsRoller1 div:nth-child(3):after,
+    .ldsRoller2 div:nth-child(3):after,
+    .ldsRoller3 div:nth-child(3):after {
+        top: 28px;
+        left: 26px;
+    }
+
+    .ldsRoller1 div:nth-child(4):after,
+    .ldsRoller2 div:nth-child(4):after,
+    .ldsRoller3 div:nth-child(4):after {
+        top: 30px;
+        left: 22px;
+    }
+
+    .ldsRoller1 div:nth-child(5):after,
+    .ldsRoller2 div:nth-child(5):after,
+    .ldsRoller3 div:nth-child(5):after {
+        top: 32px;
+        left: 17.5px;
+    }
+
+    .ldsRoller1 div:nth-child(6):after,
+    .ldsRoller2 div:nth-child(6):after,
+    .ldsRoller3 div:nth-child(6):after {
+        top: 30px;
+        left: 12.5px;
+    }
+
+    .ldsRoller1 div:nth-child(7):after,
+    .ldsRoller2 div:nth-child(7):after,
+    .ldsRoller3 div:nth-child(7):after {
+        top: 28px;
+        left: 8.5px;
+    }
+
+    .ldsRoller1 div:nth-child(8):after,
+    .ldsRoller2 div:nth-child(8):after,
+    .ldsRoller3 div:nth-child(8):after {
+        top: 24px;
+        left: 6px;
+    }
+}

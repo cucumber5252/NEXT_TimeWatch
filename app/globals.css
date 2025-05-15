@@ -1,0 +1,292 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 모든 Pretendard 폰트 파일 정의 */
+@font-face {
+    font-family: 'Pretendard';
+    src: url('/static/fonts/Pretendard-Regular.woff') format('woff'),
+        url('/static/fonts/Pretendard-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('/static/fonts/Pretendard-Bold.woff') format('woff'),
+        url('/static/fonts/Pretendard-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* 필요한 모든 font-weight와 style을 추가 정의 */
+@font-face {
+    font-family: 'Pretendard';
+    src: url('/static/fonts/Pretendard-Light.woff') format('woff'),
+        url('/static/fonts/Pretendard-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('/static/fonts/Pretendard-ExtraBold.woff') format('woff'),
+        url('/static/fonts/Pretendard-ExtraBold.otf') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+/* 폰트 적용 */
+body {
+    background-color: black;
+    color: #ffffff;
+    margin: 0;
+    font-family: 'Pretendard', sans-serif;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    min-width: 1144px; /* 전체 너비 설정 */
+    overflow-x: auto; /* 페이지 전체 가로 스크롤 설정 */
+    min-height: 100vh;
+}
+
+.wrap {
+    width: 100%;
+    max-width: 1144px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0 auto;
+    overflow-x: auto; /* 가로 스크롤 활성화 */
+}
+
+.container {
+    display: flex;
+    width: 1144px;
+    justify-content: space-between;
+    /* gap: 20px; */
+}
+
+.main-container {
+    /* flex: 7.2; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* width: calc(7.2 / (7.2 + 2.8) * 100%); 비율로 너비 설정 */
+    width: 808px;
+}
+
+.sidebar-container {
+    /* flex: 2.8; */
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    /* width: calc(2.8 / (7.2 + 2.8) * 100%); 비율로 너비 설정 */
+    width: 336px;
+}
+
+.sidebar-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.sidebar-top > * {
+    flex: 1; /* 두 컴포넌트를 1:1 비율로 배치 */
+}
+
+.adsense-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.separatePage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1144px;
+    margin: 0 auto;
+}
+
+.event-nav {
+    display: flex;
+    gap: 10px;
+}
+
+.event-nav button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+}
+
+.event-nav button.selected {
+    background-color: #0077ff;
+}
+
+.event-post {
+    width: 200px;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.event-post img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.event-post p {
+    font-size: 1em;
+    color: #555;
+}
+
+.errorBlock {
+    height: 357px;
+}
+
+.toggleContainer {
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.calendar-event-container {
+    display: grid;
+    width: 90%;
+    height: auto;
+    grid-template-columns: 1fr 2fr;
+    gap: 12px;
+}
+
+.calendar-section {
+    position: relative;
+}
+
+.event-list-section {
+    position: relative;
+    overflow-y: auto;
+}
+
+.simpleWebsiteContainer {
+    display: inline-flex;
+    justify-items: center;
+    width: 89%;
+    height: 36px;
+    margin-bottom: -14px;
+}
+
+.simpleTimeContainer {
+    display: inline-flex;
+    width: 90%;
+}
+
+.server-time-status.simple {
+    background-color: #0077ff;
+}
+
+@media (max-width: 1144px) {
+    .wrap {
+        align-items: flex-start; /* 왼쪽 정렬 */
+        overflow-x: auto; /* 가로 스크롤 유지 */
+    }
+
+    .container {
+        width: 1144px; /* 고정 너비 유지 */
+    }
+}
+
+/* 모바일 스타일 (440px 이하) */
+@media (max-width: 440px) {
+    body {
+        overflow-x: hidden; /* 모바일에서 가로 스크롤 방지 */
+        min-width: initial; /* 모바일에서 최소 너비 초기화 */
+    }
+
+    .wrap {
+        width: 100%;
+        padding: 0 16px; /* 좌우 패딩을 추가하여 모바일 화면에 맞게 조정 */
+        box-sizing: border-box; /* 패딩 포함 너비 계산 */
+        overflow-x: hidden; /* 가로 스크롤 방지 */
+    }
+
+    .container {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        padding: 0; /* 모바일에서 추가 패딩 제거 */
+        box-sizing: border-box;
+        gap: 0;
+    }
+
+    .main-container {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .sidebar-container {
+        width: 100%;
+        margin-top: 16px;
+        box-sizing: border-box;
+    }
+
+    .toggleContainer > .TimeFormatToggle,
+    .toggleContainer > .CountdownSoundToggle {
+        display: none;
+    }
+
+    .toggleContainer {
+        width: 100%;
+        justify-content: center;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    .calendar-event-container {
+        width: 100%;
+        grid-template-columns: 1fr; /* 전체 너비를 한 칸으로 조정 */
+        flex-direction: column;
+        height: auto;
+        overflow: hidden;
+        box-sizing: border-box;
+        gap: 0;
+    }
+
+    .calendar-section {
+        max-width: 100%;
+        margin-bottom: 16px;
+    }
+
+    .event-list-section {
+        max-width: 100%;
+        margin-left: 0;
+        overflow: hidden;
+    }
+
+    .event-posts {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .categoryFilters {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        justify-content: center;
+    }
+
+    .sidebar-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 16px;
+    }
+}

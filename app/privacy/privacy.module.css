@@ -1,0 +1,40 @@
+.heading {
+    font-size: 1.2em; /* 1.5em -> 1.2em */
+    font-weight: 700;
+    margin-bottom: 32px; /* 40px -> 32px */
+    text-align: center;
+    width: 100%;
+    margin-top: 64px; /* 80px -> 64px */
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 44.8px; /* 56px -> 44.8px */
+    width: 80%;
+    font-size: 0.8em;
+}
+
+.content {
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 19.2px; /* 24px -> 19.2px */
+    line-height: 1.6;
+}
+
+.heading2 {
+    color: #ffffff;
+    font-size: 1em; /* 1.25em -> 1em */
+    font-weight: 700;
+    margin-bottom: 9.6px; /* 12px -> 9.6px */
+}
+
+.list {
+    list-style-type: none;
+}
+
+.listitem {
+    margin-bottom: 8px; /* 10px -> 8px */
+}

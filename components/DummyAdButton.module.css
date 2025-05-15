@@ -1,0 +1,21 @@
+/* styles/DummyAdButton.module.css */
+.adButton {
+    background-color: #ffcc00;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.adButton:hover {
+    background-color: #ffdb4d;
+}
+
+/* 차단 상태일 때 커서를 not-allowed 모양으로 변경하고, 투명도를 낮춰 비활성화 느낌을 줍니다. */
+.disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}

@@ -1,0 +1,118 @@
+.pageWrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.mainContent {
+    flex: 1;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 160px 1fr 160px;
+    grid-template-rows: auto auto;
+    gap: 20px;
+    grid-template-areas:
+        'left-ad game right-ad'
+        'left-ad board right-ad-small';
+}
+
+.leftAd {
+    grid-area: left-ad;
+    height: 600px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+}
+
+.rightAd {
+    grid-area: right-ad;
+    height: 600px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+}
+
+.rightAdSmall {
+    grid-area: right-ad-small;
+    height: 250px;
+    width: 300px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    justify-self: end;
+}
+
+.gameSection {
+    grid-area: game;
+    height: 728px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.boardSection {
+    grid-area: board;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.gameContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1200px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            'game'
+            'board';
+    }
+
+    .leftAd,
+    .rightAd,
+    .rightAdSmall {
+        display: none;
+    }
+
+    .gameSection {
+        height: 600px;
+    }
+}
+
+/* 게임 관련 스타일 */
+.gameContainer :global(.icon) {
+    background-image: url('/t-rex-runner/assets/default_100_percent/100-offline-sprite.png');
+    background-repeat: no-repeat;
+}
+
+@media (min-resolution: 2dppx) {
+    .gameContainer :global(.icon) {
+        background-image: url('/t-rex-runner/assets/default_200_percent/200-offline-sprite.png');
+        background-size: 2180px 2000px;
+    }
+}
+
+.gameContainer :global(.icon-offline) {
+    position: relative;
+}
