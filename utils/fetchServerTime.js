@@ -1,147 +1,177 @@
 import axios from 'axios';
 
-const fetchServerTime = async (url, onSelect, onServerTimeChange, setHasError, onUrlStatus) => {
-    const TIME_API_SOURCES = [
-        {
-            name: 'timeapi.io',
-            url: 'https://timeapi.io/api/Time/current/zone?timeZone=Asia/Seoul',
-            parse: (res) => res.data?.dateTime,
-        },
-        {
-            name: 'worldtimeapi.org',
-            url: 'http://worldtimeapi.org/api/timezone/Asia/Seoul',
-            parse: (res) => res.data?.datetime,
-        },
-        {
-            name: 'google.com',
-            url: 'https://www.google.com/generate_204',
-            parse: (res) => {
-                const dateHeader = res.headers?.date || res.headers?.get?.('date');
-                return dateHeader ? new Date(dateHeader).toISOString() : null;
-            },
-        },
-    ];
-
-    const checkUrlExists = async (url) => {
-        if (!url) return false;
-        try {
-            const response = await axios.get(url, {
-                timeout: 5000,
-                validateStatus: (status) => status < 500,
-            });
-            return true;
-        } catch {
-            return false;
-        }
-    };
-
-    try {
-        let urlExists = true;
-        const urlCheckPromise = url ? checkUrlExists(url) : Promise.resolve(true);
-        let kstDate = null;
-        let usedSource = 'local';
-        let lastError = null;
-
-        for (const api of TIME_API_SOURCES) {
-            try {
-                const res = await axios.get(api.url, { timeout: 3000 });
-                const timeString = api.parse(res);
-                if (timeString) {
-                    kstDate = new Date(timeString);
-                    usedSource = api.name;
-                    if (process.env.NODE_ENV === 'development') {
-                        console.log(`[KST] Time from ${api.name}:`, kstDate.toISOString());
-                    }
-                    break;
-                }
-                throw new Error(`Invalid structure from ${api.name}`);
-            } catch (err) {
-                lastError = err;
-                if (process.env.NODE_ENV === 'development') {
-                    console.warn(`[KST] Failed from ${api.name}:`, err.message);
-                }
-            }
-        }
-
-        if (!kstDate) {
-            kstDate = new Date();
-            usedSource = 'local';
-            if (process.env.NODE_ENV === 'development') {
-                console.warn('[KST] Fallback to local time:', kstDate.toISOString());
-            }
-        }
-
-        urlExists = await urlCheckPromise;
-        if (onUrlStatus) onUrlStatus(urlExists);
-        if (onServerTimeChange) onServerTimeChange(kstDate);
-        if (onSelect) onSelect(url, kstDate.toISOString());
-        if (setHasError) setHasError(false);
-
-        return { time: kstDate, source: usedSource };
-    } catch (err) {
-        console.error('Error fetching server time:', err);
-        if (onServerTimeChange) onServerTimeChange(null);
-        if (setHasError) setHasError(true);
-        return { time: null, source: 'error' };
-    }
-};
-
-export { fetchServerTime };
+// 자체적인 서버 딜레이 일단 0.2초로 설정, sentry 트래킹 후 변동 가능
+const PROCESSING_DELAY_MS = 200;
 
 const fetchExternalServerTimeWithPrecision = async (url) => {
     try {
-        // 첫 번째 요청
-        const t0 = Date.now();
+        url = 'https://' + url;
+
         const res1 = await axios.get(url, { timeout: 3000 });
-        const t1 = Date.now();
-
         const headerTime1 = new Date(res1.headers?.date);
-        if (!headerTime1) throw new Error('No Date header in first request');
+        console.log(headerTime1);
 
-        // 약간의 지연 후 두 번째 요청
-        await new Promise((resolve) => setTimeout(resolve, 200));
-        const t2 = Date.now();
         const res2 = await axios.get(url, { timeout: 3000 });
-        const t3 = Date.now();
-
         const headerTime2 = new Date(res2.headers?.date);
-        if (!headerTime2) throw new Error('No Date header in second request');
+        console.log(headerTime2);
 
-        // RTT 계산
-        const rtt1 = t1 - t0;
-        const rtt2 = t3 - t2;
+        const isSameSecond =
+            headerTime1.getUTCSeconds() === headerTime2.getUTCSeconds() &&
+            headerTime1.getUTCMinutes() === headerTime2.getUTCMinutes() &&
+            headerTime1.getUTCHours() === headerTime2.getUTCHours();
 
-        // 중간점 기준 밀리초 예측
-        const midpoint1 = Math.floor((t0 + t1) / 2);
-        const midpoint2 = Math.floor((t2 + t3) / 2);
+        const baseTime = isSameSecond ? headerTime1 : headerTime2;
+        const estimated = new Date(baseTime);
+        estimated.setMilliseconds(isSameSecond ? 500 : 0);
 
-        const offset1 = headerTime1.getTime() - midpoint1;
-        const offset2 = headerTime2.getTime() - midpoint2;
-
-        // 최종 기준은 두 번째 요청
-        const estimatedBase = new Date(Date.now() + offset2);
-
-        // 보정: 두 요청이 같은 초면 .500초, 아니면 .000초로 맞추기
-        const sameSecond = headerTime1.getSeconds() === headerTime2.getSeconds();
-        estimatedBase.setMilliseconds(sameSecond ? 500 : 0);
-
-        return {
-            time: estimatedBase,
+        const result = {
+            time: estimated,
+            strategy: isSameSecond ? 'external-url-precision(.500)' : 'external-url-precision(.000)',
             header1: headerTime1.toISOString(),
             header2: headerTime2.toISOString(),
-            rtt: { rtt1, rtt2 },
-            offset: { offset1, offset2 },
-            final: estimatedBase.toISOString(),
-            strategy: sameSecond ? 'same-second → .500' : 'diff-second → .000',
+            estimated: estimated.toISOString(),
         };
+
+        if (process.env.NODE_ENV === 'development') {
+            console.log('[Precision Fetch Time] External URL Precision:', url, result);
+        }
+
+        return result;
     } catch (err) {
-        console.error('[Time Fetch Error]', err.message);
-        return {
-            time: null,
-            error: err.message,
-            strategy: 'fallback-local',
-        };
+        if (process.env.NODE_ENV === 'development') {
+            console.warn('[Precision Fetch Error]', err.message);
+        }
+        return null;
     }
 };
 
-export { fetchExternalServerTimeWithPrecision };
+const getSafeHeaders = () => {
+    const headers = {
+        'User-Agent':
+            'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36',
+        Referer: `https://luckti.me/${Math.floor(Math.random() * 10000)}`,
+        Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+        'Accept-Language': 'en-US,en;q=0.9',
+    };
+
+    return headers;
+};
+
+const checkUrlExists = async (url) => {
+    if (!url) return false;
+    try {
+        await axios.get(url, {
+            timeout: 5000,
+            validateStatus: (status) => status < 500,
+        });
+        return true;
+    } catch {
+        return false;
+    }
+};
+
+const fetchServerTime = async (url, onSelect, onServerTimeChange, setHasError, onUrlStatus) => {
+    let kstDate = null;
+    let usedSource = 'local-time';
+
+    // STEP 1: 실제 URL 정밀 요청
+    if (!kstDate && url) {
+        try {
+            const result = await fetchExternalServerTimeWithPrecision(url);
+            if (result?.time) {
+                kstDate = result.time;
+                usedSource = result.strategy;
+            }
+        } catch (err) {
+            if (process.env.NODE_ENV === 'development') {
+                console.warn('[external-url] Failed:', err.message);
+            }
+        }
+    }
+
+    // STEP 2: timeapi.io
+    try {
+        const res = await axios.get('https://timeapi.io/api/Time/current/zone?timeZone=Asia/Seoul', {
+            timeout: 3000,
+        });
+        // UTC 기준으로 해석되도록 "+ Z"
+        const timeString = res.data?.dateTime + 'Z';
+        if (timeString) {
+            kstDate = new Date(timeString);
+            kstDate = new Date(kstDate.getTime() - 9 * 60 * 60 * 1000);
+            usedSource = 'timeapi.io';
+        }
+    } catch (err) {
+        if (process.env.NODE_ENV === 'development') {
+            console.warn('[timeapi.io] Failed:', err.message);
+        }
+    }
+
+    // STEP 3: worldtimeapi.org
+    if (!kstDate) {
+        try {
+            const res = await axios.get('http://worldtimeapi.org/api/timezone/Asia/Seoul', {
+                timeout: 3000,
+            });
+            const timeString = res.data?.datetime;
+            if (timeString) {
+                kstDate = new Date(timeString);
+                kstDate = new Date(kstDate.getTime() - 9 * 60 * 60 * 1000);
+                usedSource = 'worldtimeapi.org';
+            }
+        } catch (err) {
+            if (process.env.NODE_ENV === 'development') {
+                console.warn('[worldtimeapi.org] Failed:', err.message);
+            }
+        }
+    }
+
+    // STEP 4: google.com/generate_204
+    if (!kstDate) {
+        try {
+            const res = await axios.get('https://www.google.com/generate_204', {
+                timeout: 3000,
+            });
+            const dateHeader = res.headers?.date;
+            if (dateHeader) {
+                kstDate = new Date(dateHeader);
+                usedSource = 'google.com';
+            }
+        } catch (err) {
+            if (process.env.NODE_ENV === 'development') {
+                console.warn('[google.com] Failed:', err.message);
+            }
+        }
+    }
+
+    // STEP 5: fallback to local
+    if (!kstDate) {
+        kstDate = new Date();
+        usedSource = 'local-time';
+    }
+
+    // 개발 로그
+    if (process.env.NODE_ENV === 'development') {
+        console.log(`[Time Source Used]: ${usedSource} → ${kstDate.toISOString()}`);
+    }
+
+    // 유효성 체크 및 콜백
+    if (onUrlStatus) checkUrlExists(url).then((exists) => onUrlStatus(exists));
+    if (onServerTimeChange) onServerTimeChange(kstDate);
+    if (onSelect) onSelect(url, kstDate.toISOString());
+    if (setHasError) setHasError(false);
+
+    const sourceTypeMap = {
+        'external-url-precision(.500)': 1,
+        'external-url-precision(.000)': 2,
+        'timeapi.io': 3,
+        'worldtimeapi.org': 4,
+        'google.com': 5,
+        'local-time': 6,
+    };
+    usedSource = sourceTypeMap[usedSource] || 0;
+
+    return { time: kstDate, source: usedSource };
+};
+
+export { fetchServerTime };
