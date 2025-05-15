@@ -9,8 +9,8 @@
     color: white;
     /* text-shadow: 0 0 1px white, 0 0 1.5px white, 0 0 2px white, 0 0 2.5px white, 0 0 3px white;*/
     font-weight: bolder;
-    /* 빠른 디버깅을 위해 의도적으로 #0077FF가 아닌 #01c916으로 설정 */
-    background: linear-gradient(to right, transparent 50%, #01c916);
+    /* 빠른 디버깅을 위해 의도적으로 #0077FF가 아닌 #0077ff으로 설정 */
+    background: linear-gradient(to right, transparent 50%, #0077ff);
     background-size: 200%;
     transition: 0.35s;
     margin-bottom: 8px;
@@ -76,8 +76,8 @@
         color: white;
         /* text-shadow: 0 0 0.5px white, 0 0 0.7px white, 0 0 2px white, 0 0 1.2px white, 0 0 1.5px white; */
         font-weight: bolder;
-        /* 빠른 디버깅을 위해 의도적으로 #0077FF가 아닌 #01c916으로 설정 */
-        background: linear-gradient(to right, transparent 50%, #01c916);
+        /* 빠른 디버깅을 위해 의도적으로 #0077FF가 아닌 #0077ff으로 설정 */
+        background: linear-gradient(to right, transparent 50%, #0077ff);
         background-size: 200%;
         transition: 0.35s;
         margin-bottom: 4px;
