@@ -7,7 +7,7 @@ import Swal from 'sweetalert2';
 import './CustomSweetAlert.css';
 import Image from 'next/image';
 import mappings from '../lib/mappings';
-import { searchWithSemantic } from '../lib/mappings';
+import Fuse from 'fuse.js';
 
 const UrlForm = ({ onSubmit }) => {
     const [url, setUrl] = useState('');
@@ -22,6 +22,23 @@ const UrlForm = ({ onSubmit }) => {
         } catch (_) {
             return false;
         }
+    };
+
+    const options = {
+        keys: ['keyword'],
+        threshold: 0.3,
+        includeScore: true,
+        useExtendedSearch: true,
+    };
+
+    const fuse = new Fuse(mappings, options);
+
+    const searchWithFuse = (input) => {
+        const results = fuse.search(input);
+        if (results.length > 0) {
+            return results[0].item;
+        }
+        return null;
     };
 
     const normalizeUrl = (inputUrl) => {
@@ -66,7 +83,7 @@ const UrlForm = ({ onSubmit }) => {
             const normalizedUrl = normalizeUrl(inputValue);
             setUrl(normalizedUrl);
         } else {
-            const match = searchWithSemantic(inputValue);
+            const match = searchWithFuse(inputValue);
             if (match) {
                 setUrl(normalizeUrl(match.domain));
             } else {
