@@ -7,6 +7,7 @@ import Swal from 'sweetalert2';
 import './CustomSweetAlert.css';
 import Image from 'next/image';
 import mappings from '../lib/mappings';
+import { searchWithSemantic } from '../lib/mappings';
 
 const UrlForm = ({ onSubmit }) => {
     const [url, setUrl] = useState('');
@@ -38,6 +39,25 @@ const UrlForm = ({ onSubmit }) => {
         }
     };
 
+    // const handleChange = (e) => {
+    //     const inputValue = e.target.value;
+    //     setName(inputValue);
+
+    //     if (isValidUrl(inputValue) || inputValue.includes('.')) {
+    //         const normalizedUrl = normalizeUrl(inputValue);
+    //         setUrl(normalizedUrl);
+    //     } else {
+    //         const match = mappings.find((mapping) =>
+    //             mapping.keyword.some((n) => n.toLowerCase() === inputValue.toLowerCase())
+    //         );
+    //         if (match) {
+    //             setUrl(normalizeUrl(match.domain)); // 매핑된 도메인을 사용하여 정규화
+    //         } else {
+    //             setUrl('');
+    //         }
+    //     }
+    // };
+
     const handleChange = (e) => {
         const inputValue = e.target.value;
         setName(inputValue);
@@ -46,11 +66,9 @@ const UrlForm = ({ onSubmit }) => {
             const normalizedUrl = normalizeUrl(inputValue);
             setUrl(normalizedUrl);
         } else {
-            const match = mappings.find((mapping) =>
-                mapping.keyword.some((n) => n.toLowerCase() === inputValue.toLowerCase())
-            );
+            const match = searchWithSemantic(inputValue);
             if (match) {
-                setUrl(normalizeUrl(match.domain)); // 매핑된 도메인을 사용하여 정규화
+                setUrl(normalizeUrl(match.domain));
             } else {
                 setUrl('');
             }
